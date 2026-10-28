@@ -4,7 +4,7 @@ Football possession segmentation from noisy tracking data and tactical events fo
 
 ## Current status
 
-Steps 1–3 are complete: the local environment and data paths work, and all four official baselines have been regenerated twice from tracking with zero label differences from the supplied references. Our improved algorithm has not been implemented yet. Step 4 will establish external-match validation after explicit approval to continue.
+Steps 1–4 are complete: the local pipeline reproduces the official baselines, and an initial external benchmark runs on separate development/validation fixtures with fixed noise tests. Our improved algorithm has not been implemented yet. Step 5 is feature extraction, after explicit approval to continue.
 
 ## Project layout
 
@@ -41,3 +41,11 @@ Detailed results: `solution/docs/DATA_VERIFICATION.md`. Current progress: `solut
 ```
 
 This rebuilds all four baselines twice, validates them, checks labels and repeated-file hashes, then scores them on the official public correctness window. Output stays under ignored `outputs/baseline_reproduction/`. Summary and measurement limits: `solution/docs/BASELINE_REPRODUCTION.md`.
+
+## External validation
+
+The frozen whole-match split and noise scenarios are in `solution/configs/validation.json`. Two public Sportec/DFL fixtures are prepared locally; the sealed final-test fixture is untouched. Inputs and reference labels remain separate. See `solution/docs/EXTERNAL_VALIDATION.md` for results, limitations and reproduction commands, and `solution/docs/EXTERNAL_DATA_SOURCES.md` for attribution.
+
+```powershell
+& '.\.venv\Scripts\python.exe' -m unittest discover -s solution/tests -v
+```

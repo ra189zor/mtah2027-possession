@@ -19,7 +19,7 @@ The user approved Step 1 and authorized the agent to execute commands and instal
 
 Use external fixtures with whole-match development/holdout splits and noisy-input stress tests. No human annotation of the supplied match. Current online rules supersede our older local snapshot; see `VALIDATION_UPDATE_2026-10-28.md` for sources and the full protocol.
 
-The revised benchmark has not been implemented. Step 3 remains baseline regeneration; Step 4 becomes the external-data benchmark. Public challenge labels are reserved for correctness checks.
+The revised benchmark was implemented in Step 4 on J03WPY (development) and J03WQQ (validation). The seven-match split was fixed before scoring; sealed J03WN1 is untouched. Public challenge labels remain reserved for correctness checks. See `EXTERNAL_VALIDATION.md` for limitations before any model-selection claim.
 
 ## Administrative items still requiring user information
 
@@ -33,4 +33,4 @@ These do not block the Step 1 environment checkpoint. Do not represent them as c
 
 The user handles all commits and pushes. Step 2 was explicitly authorized. Ignore policy is maintained only in the project-root `.gitignore`, including the provided source snapshot; its old ignore file was removed at the user's request. Prepared match assets are ignored. All other upstream source files should retain their original hashes.
 
-No innovation-stage planning is in the current implementation scope. Proceed through the approved Initial Challenge steps only. Step 3 was subsequently authorized and completed on 28 October: the official baseline reproduced with zero label differences and matching repeated-run file hashes. Step 4 (external-match validation) requires the user's explicit instruction.
+No innovation-stage planning is in the current implementation scope. Proceed through the approved Initial Challenge steps only. Steps 3–4 were subsequently authorized and completed on 28 October: baseline reproduction and the initial external validation benchmark. Step 5 (feature extraction) requires the user's explicit instruction.

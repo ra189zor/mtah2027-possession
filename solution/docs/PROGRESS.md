@@ -45,9 +45,22 @@ Details and limits are in `DATA_VERIFICATION.md`. No baseline regeneration, algo
 
 Details: `BASELINE_REPRODUCTION.md`. No dependencies were added, and no commits or pushes were made.
 
-## Next — Step 4, not started
+## Step 4 — initial benchmark complete, 28 October 2026
 
-Build the external-match validation benchmark described in `VALIDATION_UPDATE_2026-10-28.md`, beginning with one audited Sportec/DFL match. Await the user's explicit instruction to continue.
+- Froze a disjoint whole-match split across seven public Sportec/DFL fixtures before scoring.
+- Downloaded and checksum-verified J03WPY (development), then J03WQQ (validation), after the first-match adapter passed.
+- Streamed both fixtures at verified 25 Hz into anonymous input arrays and separate H/A/D/X reference targets.
+- Built deterministic clean/moderate/severe tracking-noise scenarios without target access.
+- Evaluated four official baseline windows across 56 match/condition/seed combinations, with 1000 bootstrap draws each.
+- Repeated the development run with identical metrics and input-corruption fingerprints.
+- Passed 11 tests covering leakage guards, split membership, temporal boundaries, sparse IDs, corruption and geometry.
+- Left the sealed J03WN1 fixture untouched and kept all raw data/outputs ignored.
+
+See `EXTERNAL_VALIDATION.md` for results and limits. Two fixtures are not broad cross-match evidence; additional development fixtures remain to be added before extensive tuning. No human labels on the supplied match, new dependencies, commits or pushes were introduced.
+
+## Next — Step 5, not started
+
+Implement team-level geometry, motion and missingness features. Preserve the external validation policy and expand development coverage before substantial model selection. Await the user's explicit instruction to continue.
 
 ## Outstanding administrative information
 

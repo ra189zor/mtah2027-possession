@@ -9,3 +9,5 @@ Step 2 was subsequently approved and completed: canonical inputs are prepared an
 28 October: validation policy and remaining schedule revised after reviewing external feedback and current rules. `solution/docs/VALIDATION_UPDATE_2026-10-28.md` supersedes the initial report's affected recommendations. No later implementation step was executed.
 
 28 October, subsequent execution: Step 3 was authorized and completed. Official baselines were generated twice from tracking, matched every supplied label, passed validators and reproduced public scores. Results and timing are summarized in `solution/docs/BASELINE_REPRODUCTION.md`; local detailed outputs are ignored. Step 4 has not started. No commit or push was made.
+
+28 October, later execution: Step 4 was authorized and completed as an initial two-fixture external benchmark. A seven-match split was fixed before evaluation; development and validation inputs/labels are separated, seeded stress tests reproduce, 11 guard tests pass, and the sealed test fixture is untouched. See `solution/docs/EXTERNAL_VALIDATION.md`. No improved model has been trained; Step 5 has not started. No commit or push was made.

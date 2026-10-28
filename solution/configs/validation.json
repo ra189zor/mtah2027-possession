@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "created_date": "2026-10-28",
+  "dataset": "pysport/idsse-data",
+  "development_matches": ["J03WPY", "J03WOH", "J03WOY", "J03WMX"],
+  "validation_matches": ["J03WQQ", "J03WR9"],
+  "sealed_test_matches": ["J03WN1"],
+  "initial_audit_match": "J03WPY",
+  "split_policy": "Whole matches only. Development may use leave-one-match-out comparisons. Validation is for limited candidate selection. Sealed test requires an explicit release at final model selection.",
+  "challenge_fixture": "BAR-ATH",
+  "challenge_usage": "Unsupervised inspection and official public correctness checks only; excluded from supervised training and hyperparameter selection.",
+  "fps": 25,
+  "seeds": [17, 43, 101],
+  "regimes": {
+    "clean": {
+      "ball_dropout_fraction": 0.0,
+      "ball_gap_median_s": 10.72,
+      "ball_gap_lognormal_sigma": 0.95,
+      "player_dropout_fraction": 0.0,
+      "coordinate_noise_m": 0.0,
+      "duplicate_probability": 0.0,
+      "slot_permutation_period_s": 0
+    },
+    "moderate": {
+      "ball_dropout_fraction": 0.407,
+      "ball_gap_median_s": 10.72,
+      "ball_gap_lognormal_sigma": 0.95,
+      "player_dropout_fraction": 0.07,
+      "coordinate_noise_m": 0.15,
+      "duplicate_probability": 0.01,
+      "slot_permutation_period_s": 30
+    },
+    "severe": {
+      "ball_dropout_fraction": 0.60,
+      "ball_gap_median_s": 20.0,
+      "ball_gap_lognormal_sigma": 0.95,
+      "player_dropout_fraction": 0.15,
+      "coordinate_noise_m": 0.40,
+      "duplicate_probability": 0.03,
+      "slot_permutation_period_s": 10
+    }
+  },
+  "corruption_note": "Stress scenarios are fixed hypotheses, not fitted simulator parameters. Noise depends on inputs and RNG only, never on possession or alive/dead labels. The challenge missing-gap aggregate includes stoppages and cannot be interpreted as live-play occlusion alone.",
+  "baseline_windows": [0, 25, 50, 125]
+}
