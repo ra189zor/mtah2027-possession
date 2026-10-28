@@ -1,0 +1,11 @@
+# Current project status
+
+21 October 2026: Step 1 was approved and completed. The initial research report is retained as the assessment snapshot; its historical statement that Step 1 awaits approval is superseded by this progress record.
+
+The existing project-root `.venv` now has the required packages installed. The `solution/` directory contains the code-only Git repository, dependency lock, decisions and detailed progress. Official baseline validation and evaluation passed from that virtual environment. Results are in `research/step1_evaluation/`.
+
+Step 2 was subsequently approved and completed: canonical inputs are prepared and checked. One root `.gitignore` replaces nested ignore files. The user handles commits and pushes. See `solution/docs/DATA_VERIFICATION.md` for results and the optional broadcast frame-count discrepancy. Step 3 has not started; advance only on explicit user instruction.
+
+28 October: validation policy and remaining schedule revised after reviewing external feedback and current rules. `solution/docs/VALIDATION_UPDATE_2026-10-28.md` supersedes the initial report's affected recommendations. No later implementation step was executed.
+
+28 October, subsequent execution: Step 3 was authorized and completed. Official baselines were generated twice from tracking, matched every supplied label, passed validators and reproduced public scores. Results and timing are summarized in `solution/docs/BASELINE_REPRODUCTION.md`; local detailed outputs are ignored. Step 4 has not started. No commit or push was made.

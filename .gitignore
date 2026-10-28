@@ -1,0 +1,67 @@
+# Local Python environments and caches, anywhere in the project.
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Original restricted downloads and canonical/extracted match data.
+/More Than A Hack 2027 - Initial Challenge - Dataset/
+/data/
+**/data/**
+!more-than-a-hack-2027-main repo/data/README.md
+datasets/
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.zip
+*.gz
+*.gzip
+*.pl3container
+*_atd.xml
+*_atd.txt
+*_smart_tagging.xml
+*_homography.csv
+
+# Generated outputs, private annotations and reconstructive derivatives.
+cache/
+outputs/
+annotations/
+reports/
+*.npy
+*.npz
+*.pkl
+*.parquet
+*_possession_gt.csv
+*_possession_gt_meta.json
+*_possession_gt_reference.csv
+possession_by_frame.pkl
+more-than-a-hack-2027-main repo/evaluation/results/*.csv
+!more-than-a-hack-2027-main repo/evaluation/results/baseline_*.csv
+more-than-a-hack-2027-main repo/evaluation/scoreboard.csv
+/research/*_evaluation/
+/research/step2_data_check.json
+/research/dataset_audit_console.txt
+/research/local_data_manifest.json
+
+# Local model artifacts pending licence/provenance review.
+models/
+checkpoints/
+*.pt
+*.pth
+*.onnx
+
+# Preserved local Git checkpoint; not part of the publishable repository.
+/.local-git/
+
+# Secrets and editor/machine configuration.
+.env
+.env.*
+.idea/
+.vscode/
+*.log
+.DS_Store

@@ -1,0 +1,180 @@
+{
+  "archives": [
+    {
+      "archive": "More Than A Hack 2027 - Initial Challenge - Dataset-20261021T094337Z-1-003.zip",
+      "member": "More Than A Hack 2027 - Initial Challenge - Dataset/broadcast/BAR-ATH_broadcast_atd.xml",
+      "bytes": 64956
+    },
+    {
+      "archive": "More Than A Hack 2027 - Initial Challenge - Dataset-20261021T094337Z-1-004.zip",
+      "member": "More Than A Hack 2027 - Initial Challenge - Dataset/README.md",
+      "bytes": 2161
+    },
+    {
+      "archive": "More Than A Hack 2027 - Initial Challenge - Dataset-20261021T094337Z-1-005.zip",
+      "member": "More Than A Hack 2027 - Initial Challenge - Dataset/tactical/BAR-ATH_tactical_smart_tagging.xml",
+      "bytes": 261055
+    },
+    {
+      "archive": "More Than A Hack 2027 - Initial Challenge - Dataset-20261021T094337Z-1-006.zip",
+      "member": "More Than A Hack 2027 - Initial Challenge - Dataset/tactical/BAR-ATH_tactical_atd.xml",
+      "bytes": 59057
+    },
+    {
+      "archive": "More Than A Hack 2027 - Initial Challenge - Dataset-20261021T094337Z-1-007.zip",
+      "member": "More Than A Hack 2027 - Initial Challenge - Dataset/broadcast/BAR-ATH_broadcast_atd.txt",
+      "bytes": 141966465
+    },
+    {
+      "archive": "More Than A Hack 2027 - Initial Challenge - Dataset-20261021T094337Z-1-008.zip",
+      "member": "More Than A Hack 2027 - Initial Challenge - Dataset/broadcast/BAR-ATH_broadcast_homography.csv",
+      "bytes": 15401635
+    },
+    {
+      "archive": "More Than A Hack 2027 - Initial Challenge - Dataset-20261021T094337Z-1-009.zip",
+      "member": "More Than A Hack 2027 - Initial Challenge - Dataset/tactical/BAR-ATH_tactical_homography.csv",
+      "bytes": 23187043
+    },
+    {
+      "archive": "More Than A Hack 2027 - Initial Challenge - Dataset-20261021T094337Z-1-010.zip",
+      "member": "More Than A Hack 2027 - Initial Challenge - Dataset/tactical/BAR-ATH_tactical_atd.txt",
+      "bytes": 195714285
+    }
+  ],
+  "tracking": {
+    "broadcast": {
+      "records": 164488,
+      "ids_exact_1_to_n": true,
+      "ball_present": 83121,
+      "ball_present_pct": 50.53316959291864,
+      "sha256": "a71c1c9391e564032446be91ffbd7564205b47966060181532d80a338685e458"
+    },
+    "tactical": {
+      "records": 199319,
+      "ids_exact_1_to_n": true,
+      "ball_present": 113488,
+      "ball_present_pct": 56.937873459128326,
+      "sha256": "f130e350d2bfdf734b7e32f072931fccc6d015c1e837d082064875fe0a700431",
+      "graded_frames": 158857,
+      "ball_present_graded": 94214,
+      "mean_players_graded": 20.487419503075092,
+      "missing_ball_runs_graded": {
+        "count": 150,
+        "median_s": 10.72,
+        "p95_s": 50.795999999999985,
+        "max_s": 221.48
+      }
+    }
+  },
+  "homography": {
+    "broadcast": {
+      "rows": 164488,
+      "frames_exact_0_to_n_minus_1": true,
+      "valid_rows": 108248,
+      "valid_pct": 65.80905597976752,
+      "error_median_valid": 0.2165086715
+    },
+    "tactical": {
+      "rows": 199319,
+      "frames_exact_0_to_n_minus_1": true,
+      "valid_rows": 199319,
+      "valid_pct": 100.0,
+      "error_median_valid": 0.239245936
+    }
+  },
+  "videos": {
+    "BAR-ATH_broadcast-001.mp4": {
+      "bytes": 13962360320,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 25000,
+          "duration_s": 6579.48,
+          "handler": "vide",
+          "samples": 164487
+        },
+        {
+          "width": 0.0,
+          "height": 0.0,
+          "timescale": 48000,
+          "duration_s": 6579.52,
+          "handler": "soun",
+          "samples": 308415
+        }
+      ]
+    },
+    "BAR-ATH_tactical-002.mp4": {
+      "bytes": 5222307334,
+      "tracks": [
+        {
+          "width": 0.0,
+          "height": 0.0,
+          "timescale": 48000,
+          "duration_s": 7972.693333333334,
+          "handler": "soun",
+          "samples": 373720
+        },
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 25000,
+          "duration_s": 7972.76,
+          "handler": "vide",
+          "samples": 199319
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "broadcast": {
+      "teams": 2,
+      "track_slots": 51
+    },
+    "tactical": {
+      "teams": 2,
+      "track_slots": 46
+    }
+  },
+  "dataset_readme_read": true,
+  "tagging": {
+    "instances": 638,
+    "codes": {
+      "SET PIECES": 59,
+      "PLAYERS IN THE BOX": 97,
+      "BALL IN FINAL THIRD": 93,
+      "BALL IN THE BOX": 72,
+      "GOALS": 4,
+      "PROGRESSION": 66,
+      "ATTACKING TRANSITION": 24,
+      "BUILD UP": 22,
+      "LONG BALL": 29,
+      "CREATING CHANCES": 30,
+      "DEFENDING IN MIDDLE THIRD": 66,
+      "DEFENSIVE TRANSITION": 24,
+      "DEFENDING IN ATTACKING THIRD": 22,
+      "DEFENDING IN DEFENSIVE THIRD": 30
+    },
+    "team_tags": {
+      "N/A": 36,
+      "Barcelona": 314,
+      "Atletic Club": 288
+    }
+  },
+  "public_gt": {
+    "rows": 199319,
+    "counts": {
+      "H": 3454,
+      "A": 2577,
+      "D": 1469,
+      "X": 191819
+    },
+    "graded_runs": [
+      [
+        11185,
+        18685
+      ]
+    ],
+    "possessions": 17
+  }
+}
