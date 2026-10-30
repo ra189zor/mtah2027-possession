@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "motion_lag_frames": 5,
+  "ball_coverage_window_frames": 25,
+  "max_player_speed_mps": 12.0,
+  "max_ball_speed_mps": 80.0,
+  "moving_speed_mps": 1.0,
+  "near_ball_radius_m": 2.0,
+  "motion_chunk_frames": 512,
+  "note": "Fixed engineering checks, not calibrated on challenge labels. Motion is inferred with unique mutual nearest neighbours within each team, not player-slot identity. Missing/implausible motion remains unknown. Offline future-observation distances are explicitly named."
+}

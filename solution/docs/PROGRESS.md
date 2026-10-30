@@ -58,9 +58,20 @@ Details: `BASELINE_REPRODUCTION.md`. No dependencies were added, and no commits 
 
 See `EXTERNAL_VALIDATION.md` for results and limits. Two fixtures are not broad cross-match evidence; additional development fixtures remain to be added before extensive tuning. No human labels on the supplied match, new dependencies, commits or pushes were introduced.
 
-## Next — Step 5, not started
+## Step 5 — complete, 30 October 2026
 
-Implement team-level geometry, motion and missingness features. Preserve the external validation policy and expand development coverage before substantial model selection. Await the user's explicit instruction to continue.
+- Implemented 40 geometry/motion/missingness channels plus 12 optional automatic-tag channels, with explicit validity masks.
+- Added label-free challenge and external input readers; external reference arrays are never opened by feature extraction.
+- Checked all 199319 challenge frames, both clean external fixtures and development moderate/severe seed-17 stress inputs.
+- Repeated extraction matched exactly; within-team slot reversal preserved masks and numerical values within the declared tolerance on all five caches. Inputs were unchanged.
+- Passed all 24 tests, including synthetic geometry, motion, missingness, half boundaries, ambiguous identity and tag semantics.
+- Kept caches ignored and the sealed fixture untouched. No training, parameter fitting, dependencies, commits or pushes.
+
+Details and limitations: `FEATURE_EXTRACTION.md`. These are feature-correctness checks, not evidence of improved possession scores.
+
+## Next — Step 6, not started
+
+Implement the first geometry/persistence/stoppage solver and evaluate it under the external validation policy. Expand development coverage before substantial model selection. Await the user's explicit instruction to continue.
 
 ## Outstanding administrative information
 

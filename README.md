@@ -4,7 +4,7 @@ Football possession segmentation from noisy tracking data and tactical events fo
 
 ## Current status
 
-Steps 1–4 are complete: the local pipeline reproduces the official baselines, and an initial external benchmark runs on separate development/validation fixtures with fixed noise tests. Our improved algorithm has not been implemented yet. Step 5 is feature extraction, after explicit approval to continue.
+Steps 1–5 are complete: official baselines reproduce, the initial external benchmark works, and 52 tracking/tag features pass extraction checks on five datasets. Our improved possession algorithm has not been implemented yet. Step 6 is the first geometry/persistence/stoppage solver, after explicit instruction to continue.
 
 ## Project layout
 
@@ -49,3 +49,11 @@ The frozen whole-match split and noise scenarios are in `solution/configs/valida
 ```powershell
 & '.\.venv\Scripts\python.exe' -m unittest discover -s solution/tests -v
 ```
+
+## Feature extraction
+
+```powershell
+& '.\.venv\Scripts\python.exe' -X utf8 solution/tools/extract_features.py
+```
+
+This creates ignored feature caches from tracking and available automatic tags without opening reference-label arrays. Each channel has an explicit validity mask. Details, checks and limitations: `solution/docs/FEATURE_EXTRACTION.md`.

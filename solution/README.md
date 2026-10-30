@@ -1,6 +1,6 @@
 # More Than A Hack 2027 solution workspace
 
-Status: Steps 1–4 complete; official baseline reproduction and initial external-match validation are working. No improved possession algorithm yet.
+Status: Steps 1–5 complete; official baseline reproduction, initial external-match validation and 52-channel feature extraction are working. No improved possession algorithm yet. The next authorized step will be the first geometry/persistence/stoppage solver.
 
 The project root is the intended Git repository root. This `solution/` directory contains our code, configuration and documentation. A single project-root `.gitignore` excludes the virtual environment, original downloads, prepared match inputs, generated reports and local annotations. Committing and pushing are handled by the user. The previous Step 1 local Git metadata is preserved under ignored `.local-git/solution.git`; `solution/` is now a normal directory.
 
@@ -53,6 +53,8 @@ The preparation tool extracts only the seven expected non-video assets from the 
 Inputs resolve under `more-than-a-hack-2027-main repo/data/tactical/` and `data/broadcast/`. The default official loader paths work without setting `MTAH_DATA_DIR`. A local manifest and aggregate verification report are written under ignored research paths. Video checking decodes selected frames, including the last reported frame; it does not perform a full sequential decode or prove broadcast/tactical synchronization.
 
 ## Data and publication
+
+Feature extraction runs from the project root with `& '.\.venv\Scripts\python.exe' -X utf8 solution/tools/extract_features.py`. It writes ignored caches with values, validity masks and channel names. See `docs/FEATURE_EXTRACTION.md` for methods, verification and limits.
 
 External validation tooling, the frozen match split and test scenarios are documented in `docs/EXTERNAL_VALIDATION.md`. Public Sportec/DFL source attribution and transformations are recorded in `docs/EXTERNAL_DATA_SOURCES.md`. The actual external downloads, arrays and generated results remain in ignored paths at the project root.
 
