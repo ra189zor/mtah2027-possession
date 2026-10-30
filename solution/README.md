@@ -1,6 +1,6 @@
 # More Than A Hack 2027 solution workspace
 
-Status: Steps 1–6, oracle diagnosis, learned dead evidence and gap-aware ownership are complete. Four development folds selected spell-weighted ownership with 0.8 s confirmation; two validation fixtures show improved spellF1 and zero playing-period X, while noisy counts overfragment. See `docs/GAP_OWNERSHIP.md`. Three-state temporal decoding is next and has not started.
+Status: Steps 1–6, oracle diagnosis, learned dead evidence, gap-aware ownership and three-state temporal decoding are complete. Development-selected fixed costs improve moderate external spellF1 to 0.5163 / 0.4969; both opened fixtures meet the approximate ±20% count gate with zero playing-period X. Undercounting remains. See `docs/TEMPORAL_DECODER.md` for run commands, limitations and results. Broader nested validation and final inference packaging remain pending.
 
 The project root is the intended Git repository root. This `solution/` directory contains our code, configuration and documentation. A single project-root `.gitignore` excludes the virtual environment, original downloads, prepared match inputs, generated reports and local annotations. Committing and pushing are handled by the user. The previous Step 1 local Git metadata is preserved under ignored `.local-git/solution.git`; `solution/` is now a normal directory.
 

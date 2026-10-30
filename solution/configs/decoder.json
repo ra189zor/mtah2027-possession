@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "stop_restart_costs": [[8,8],[20,20],[40,40],[80,80],[20,40],[40,20]],
+  "owner_switch_costs": [8,24],
+  "modes": ["fixed","evidence"],
+  "epsilon": 0.000001,
+  "workers": 4,
+  "selection": "Freeze 24 positive-cost candidates and the zero-cost frame-MAP comparator before scoring. Maximize development out-of-fold mean spellF1 with equal match/regime weighting; macroF1 tie-break. Keep fixed and evidence-dependent family winners for validation. No validation retuning.",
+  "note": "Costs are negative-log-score penalties per transition at native 25 Hz, not durations. Joint states: H=(1-Pdead)*Phome, A=(1-Pdead)*(1-Phome), D=Pdead. Evidence scales: stop 1.5-Pdead; restart 0.5+Pdead; H-to-A 0.5+Phome; A-to-H 1.5-Phome. No hard minimum spell duration, target-match rate prior, added training, or model changes."
+}

@@ -4,7 +4,7 @@ Football possession segmentation from noisy tracking data and tactical events fo
 
 ## Current status
 
-Steps 1–6, external oracle diagnosis, learned dead evidence and gap-aware ownership are complete. The new system emits H/A/D throughout playing periods and improves external spellF1 on both validation fixtures, but noisy possession counts still overfragment. See `solution/docs/GAP_OWNERSHIP.md`. The next step is three-state temporal decoding over the stronger evidence; previous systems are preserved.
+Steps 1–6, external oracle diagnosis, learned dead evidence, gap-aware ownership and three-state temporal decoding are complete. Moderate external spellF1 is now 0.5163 / 0.4969 on the two opened validation fixtures; counts meet the approximate ±20% gate and playing periods contain no X. Remaining undercounting and broader validation are documented in `solution/docs/TEMPORAL_DECODER.md`, including run commands. End-to-end learned challenge inference and final packaging remain pending; previous systems are preserved.
 
 ## Project layout
 
@@ -44,7 +44,7 @@ This rebuilds all four baselines twice, validates them, checks labels and repeat
 
 ## External validation
 
-The frozen whole-match split and noise scenarios are in `solution/configs/validation.json`. Two public Sportec/DFL fixtures are prepared locally; the sealed final-test fixture is untouched. Inputs and reference labels remain separate. See `solution/docs/EXTERNAL_VALIDATION.md` for results, limitations and reproduction commands, and `solution/docs/EXTERNAL_DATA_SOURCES.md` for attribution.
+The frozen whole-match split and noise scenarios are in `solution/configs/validation.json`. Four public Sportec/DFL development fixtures and two validation fixtures are prepared locally; the sealed fixture is untouched in the current protocol. Inputs and reference labels remain separate. See `solution/docs/TEMPORAL_DECODER.md` for current results and `solution/docs/EXTERNAL_DATA_SOURCES.md` for attribution. The planned all-seven nested validation will explicitly replace the historical sealed-fixture role.
 
 ```powershell
 & '.\.venv\Scripts\python.exe' -m unittest discover -s solution/tests -v

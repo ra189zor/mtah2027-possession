@@ -1,5 +1,7 @@
 # Bidirectional ownership recovery
 
+Historical checkpoint: the later temporal decoder now reduces the fragmentation reported below. See `TEMPORAL_DECODER.md` for current results; the ownership evidence and this checkpoint's frozen artifacts remain unchanged.
+
 Completed 30 October 2026. The selected gap-aware ownership model improves external spellF1 and eliminates playing-period X while keeping dead probabilities unchanged. Noisy possession counts still overfragment, so this checkpoint is not a finished submission system.
 
 This checkpoint follows the learned dead-ball model. It adds future/past geometric control evidence and conditional ownership learning, keeping the selected dead-ball model and its threshold frozen. It does not implement Viterbi or smooth the dead mask. All experiments use external Sportec/DFL fixtures only.

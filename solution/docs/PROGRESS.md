@@ -117,9 +117,21 @@ Methods, results, calibration, paired intervals and failure analysis: `DEAD_BALL
 
 Details: `GAP_OWNERSHIP.md`.
 
-## Next — three-state temporal decoding, not started
+## Three-state temporal decoding — complete, 30 October 2026
 
-Decode the learned dead and bidirectional owner evidence using development out-of-fold probabilities; distinguish stop, restart and owner-switch costs and measure boundary/fragmentation tradeoffs. Preserve all previous systems. All-seven outer-match validation, sensitivity labels and stronger corruptions remain planned; that future protocol will explicitly replace the old sealed role. Historical split files remain unchanged.
+- Added exact offline H/A/D Viterbi with independent half resets and joint dead/conditional-team emissions; no hard minimum duration or possession-rate target.
+- Scored 25 prespecified profiles on 28 cached development out-of-fold cases. Selected fixed stop/restart costs 40/40 and owner-switch cost 8, then froze selection before validation. No learned model or previous source was changed.
+- Moderate external spellF1 improves from 0.3578 to 0.5163 on J03WQQ and 0.3150 to 0.4969 on J03WR9. Conditional paired improvement intervals exclude zero.
+- Moderate counts fall from 611.3 / 593.0 to 337.3 / 307.3 against 401 / 370 truth, within the approximate ±20% gate on both fixture averages. Five of six moderate seeds pass individually; J03WQQ seed 17 narrowly fails at −20.7%. Some possessions still merge; severe J03WR9 averages −22.8% count error and fails.
+- Zero X throughout published periods. False alive islands wholly inside true dead stretches are almost eliminated; D precision/recall tradeoffs and durations are reported.
+- All 73 tests and dependency checking pass; 56 frozen comparator rows reproduce, 14 validation probability files remain unchanged, selected predictions repeat and 14 external CSVs validate.
+- No new data, dependencies, competition-data inference/evaluation, commit, push or submission. Sealed fixture remains absent.
+
+Details and reproduction: `TEMPORAL_DECODER.md`.
+
+## Next — broader validation, not started
+
+All-seven nested outer-match validation, sensitivity labels and stronger corruptions remain planned; that future protocol will explicitly replace the old sealed role. Historical split files remain unchanged. Final learned inference packaging follows validation; the current decoder runner consumes cached external probabilities.
 
 ## Outstanding administrative information
 
