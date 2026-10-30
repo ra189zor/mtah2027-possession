@@ -69,9 +69,21 @@ See `EXTERNAL_VALIDATION.md` for results and limits. Two fixtures are not broad 
 
 Details and limitations: `FEATURE_EXTRACTION.md`. These are feature-correctness checks, not evidence of improved possession scores.
 
-## Next — Step 6, not started
+## Step 6 — complete, 30 October 2026
 
-Implement the first geometry/persistence/stoppage solver and evaluate it under the external validation policy. Expand development coverage before substantial model selection. Await the user's explicit instruction to continue.
+- Implemented deterministic owner confirmation/persistence with separate stoppage/restart state and optional weak automatic-tag evidence.
+- Fixed three profiles before scoring; selected `responsive` on development only, with equal regime weighting.
+- Evaluated that frozen winner once on J03WQQ. SpellF1 exceeds the ±50 baseline for clean/moderate/severe inputs, while noisy macroF1 and coverage remain weaknesses.
+- Recomputed all four baselines; 56 baseline rows/fingerprints match the prior benchmark. Saved 84 total score rows, with 1000 bootstrap draws each.
+- Passed all 39 tests and exact prediction-repeat/input-immutability checks.
+- Generated a full 199319-row challenge CSV; the official validator passed. No challenge reference scoring or parameter tuning.
+- Sealed fixture untouched; outputs ignored. No dependencies, commits, pushes or submissions.
+
+See `FALLBACK_SOLVER.md` for results, coverage tradeoffs and failure taxonomy. Two fixtures and tracking-only external tests do not establish challenge performance or tag accuracy.
+
+## Next — Step 7, not started
+
+Implement and compare a structured temporal decoder with the preserved fallback. Expand development coverage before substantial model selection. Await the user's explicit instruction to continue.
 
 ## Outstanding administrative information
 

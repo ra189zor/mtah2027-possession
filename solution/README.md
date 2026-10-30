@@ -1,6 +1,6 @@
 # More Than A Hack 2027 solution workspace
 
-Status: Steps 1–5 complete; official baseline reproduction, initial external-match validation and 52-channel feature extraction are working. No improved possession algorithm yet. The next authorized step will be the first geometry/persistence/stoppage solver.
+Status: Steps 1–6 complete. The first deterministic solver produces a valid full challenge CSV and improves external spellF1 on the two evaluated fixtures, with substantial abstention under noise. See `docs/FALLBACK_SOLVER.md` for results, reproduction and limits. Step 7, the structured temporal decoder, awaits explicit instruction.
 
 The project root is the intended Git repository root. This `solution/` directory contains our code, configuration and documentation. A single project-root `.gitignore` excludes the virtual environment, original downloads, prepared match inputs, generated reports and local annotations. Committing and pushing are handled by the user. The previous Step 1 local Git metadata is preserved under ignored `.local-git/solution.git`; `solution/` is now a normal directory.
 

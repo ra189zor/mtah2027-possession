@@ -33,8 +33,12 @@ These do not block the Step 1 environment checkpoint. Do not represent them as c
 
 The user handles all commits and pushes. Step 2 was explicitly authorized. Ignore policy is maintained only in the project-root `.gitignore`, including the provided source snapshot; its old ignore file was removed at the user's request. Prepared match assets are ignored. All other upstream source files should retain their original hashes.
 
-No innovation-stage planning is in the current implementation scope. Proceed through the approved Initial Challenge steps only. Steps 3–4 were subsequently authorized and completed on 28 October: baseline reproduction and the initial external validation benchmark. Step 5 was authorized and completed on 30 October; Step 6 requires the user's next instruction.
+No innovation-stage planning is in the current implementation scope. Proceed through the approved Initial Challenge steps only. Steps 3–4 were subsequently authorized and completed on 28 October: baseline reproduction and the initial external validation benchmark. Steps 5–6 were authorized and completed on 30 October; Step 7 requires the user's next instruction.
 
 ## Feature contract — 30 October 2026
 
 Features use metres/seconds and carry validity masks; missing observations never become measured zeros. Motion uses same-team spatial correspondence rather than persistent slot IDs, with explicit ambiguity and speed filtering. This remains an estimate, especially around close players and replacements. Automatic tactical tags provide optional weak evidence; no equivalent tags are present on the external fixtures, so that branch still lacks external validation. Future-observation timing is explicitly offline. Fixed feature settings were not fitted to challenge labels. See `FEATURE_EXTRACTION.md`.
+
+## First solver — 30 October 2026
+
+Selected the `responsive` state-machine profile from three presets using development spellF1, weighted equally across clean/moderate/severe regimes. Validation used only the frozen winner, with no retuning. Keep the full valid challenge artifact as a fallback, alongside the unchanged official baseline. Improved temporal scores coexist with substantial noisy-input abstention and weaker noisy frame metrics; broader coverage and tag validation remain open. See `FALLBACK_SOLVER.md`. The structured decoder is Step 7 and has not started.
