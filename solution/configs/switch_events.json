@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "event_radius_frames": 5,
+  "training_stride_frames": 25,
+  "positive_sample_offsets_frames": [-5, 0, 5],
+  "lags_frames": [5, 12, 25, 50],
+  "model": {"learning_rate": 0.06, "max_iter": 150, "max_leaf_nodes": 15, "min_samples_leaf": 40, "l2_regularization": 1.0, "early_stopping": false, "random_state": 17},
+  "reward_strengths": [2, 4],
+  "reward_threshold": 0.1,
+  "minimum_directed_switch_cost": -4,
+  "minimum_round_trip_cost": 2,
+  "workers": 4,
+  "threads_per_worker": 2,
+  "targets": "Three classes: no direct ownership switch, switch to home, switch to away. Positives extend at most five frames either side of a direct H/A handover, confined to the same true alive run and period. Closest event wins overlapping bands; earlier event wins ties. D and graded non-events are negative; X excluded. Targets are supervised training/evaluation data only.",
+  "sampling": "Native 1 Hz rows plus event-centre and +/-5-frame rows within each true alive run. Restore each match/condition's full-frame class proportions by class-stratified inverse sampling weights. Equal match/regime mass, noisy seeds share regime mass. Contextual noise and alternate labels are not training inputs.",
+  "features": "Tracking-only physical/anchor features plus cross-fitted home/dead probabilities and offline +/-0.2/0.48/1/2 s context; no labels or true dead mask. For outer holdout O and training fixture T, use original five-match head predictions excluding both O and T. Inference on O uses original six-match heads excluding O.",
+  "integration": "Keep original H/A/D emissions and stop/restart penalties. Only directed H/A transition penalties vary. Above probability 0.1, subtract strength times positive log-odds excess over 0.1, floor individual cost at -4, and raise both costs equally if needed to keep a two-switch round trip at least 2. Gains 2 and 4 are fixed ablations, not selected using outer scores.",
+  "protocol": "Fixed seven-fold outer experiment on previously opened external fixtures. Fit a new switch-event model on six fixtures, with cross-fitted upstream training probabilities excluding the outer holdout. No additional inner hyperparameter search is claimed. Old models, probabilities, labels, decoder profiles and original code remain unchanged. Report both reference conventions, short-spell recovery, false ownership switches and spellF1; no competition data. Historical adaptation and shared-training uncertainty remain limitations."
+}
