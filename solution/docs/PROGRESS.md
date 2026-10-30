@@ -104,9 +104,22 @@ Details: `ORACLE_DIAGNOSIS.md`.
 
 Methods, results, calibration, paired intervals and failure analysis: `DEAD_BALL_MODEL.md`.
 
-## Next — gap-aware ownership, not started
+## Gap-aware ownership — complete, 30 October 2026
 
-Add bidirectional ownership evidence before the three-state decoder. Preserve the frozen fallback and learned dead classifier, evaluate true interval alignment and recover missing ownership without using references as inputs. All-seven outer-match validation, sensitivity labels and stronger corruptions remain planned; that future protocol will explicitly replace the old sealed role. Historical split files remain unchanged.
+- Added 23 geometric/anchor context channels to the 275 existing inputs and built 42 label-free bidirectional feature cases.
+- Compared bridge-only, frame-weighted and spell-weighted ownership across four development folds, three confirmation settings and seven corruption cases per fixture (252 rows).
+- Refit the selected dead architecture on each fold's other three matches; all 28 out-of-fold dead scores reproduce. No final all-four-match dead predictions leaked into development selection.
+- Selected spell-weighted ownership with 0.8 s confirmation on development, then evaluated fixed families on both opened validation fixtures (84 rows).
+- Moderate spellF1 improves over the previous learned-dead overlay from 0.2740 to 0.3578 on J03WQQ and 0.2590 to 0.3150 on J03WR9; conditional paired improvement intervals exclude zero.
+- Zero X inside published periods; frozen validation dead probabilities and mask are unchanged. Moderate counts still exceed reference by 52.5% / 60.3%, with many false-alive islands inside true stoppages.
+- All 65 tests pass; 42 comparator score rows reproduce exactly. Retained fold/final models and out-of-fold probabilities for later decoding.
+- No new decoder, dependencies, downloads, competition-data inference/evaluation, commit or push.
+
+Details: `GAP_OWNERSHIP.md`.
+
+## Next — three-state temporal decoding, not started
+
+Decode the learned dead and bidirectional owner evidence using development out-of-fold probabilities; distinguish stop, restart and owner-switch costs and measure boundary/fragmentation tradeoffs. Preserve all previous systems. All-seven outer-match validation, sensitivity labels and stronger corruptions remain planned; that future protocol will explicitly replace the old sealed role. Historical split files remain unchanged.
 
 ## Outstanding administrative information
 

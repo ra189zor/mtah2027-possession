@@ -1,5 +1,7 @@
 # Learned dead-ball evidence
 
+The subsequent ownership-recovery checkpoint is in `GAP_OWNERSHIP.md`. It preserves this selected dead detector, removes playing-period X and exposes remaining fragmentation from brief false-alive holes.
+
 Completed 30 October 2026. The selected model greatly improves external D recall and retains high precision, including when ball observations are absent. The unsmoothed integration overlay still fragments possessions and retains ownership unknowns; it is not a finished replacement for the fallback.
 
 This checkpoint follows the external oracle diagnosis. It adds a CPU gradient-boosted dead-ball classifier while preserving the existing ownership rules. Bidirectional gap recovery and the structured decoder remain separate, later work. All numerical experiments in this document use external Sportec/DFL data.

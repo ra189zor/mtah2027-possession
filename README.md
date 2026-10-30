@@ -4,7 +4,7 @@ Football possession segmentation from noisy tracking data and tactical events fo
 
 ## Current status
 
-Steps 1–6 and external oracle diagnosis are complete. A learned dead-ball model is now selected through four development match folds and evaluated on two validation fixtures. Dead recall improves substantially; the integration still has ownership unknowns and fragmented possessions. See `solution/docs/DEAD_BALL_MODEL.md`. The next step is gap-aware ownership before decoder work; the original fallback is preserved.
+Steps 1–6, external oracle diagnosis, learned dead evidence and gap-aware ownership are complete. The new system emits H/A/D throughout playing periods and improves external spellF1 on both validation fixtures, but noisy possession counts still overfragment. See `solution/docs/GAP_OWNERSHIP.md`. The next step is three-state temporal decoding over the stronger evidence; previous systems are preserved.
 
 ## Project layout
 

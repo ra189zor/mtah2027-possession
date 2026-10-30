@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "anchor_confirm_s": 0.4,
+  "control_distance_m": 4.0,
+  "owner_margin_m": 1.0,
+  "geometry_logit_scale_m": 2.0,
+  "anchor_probability": 0.95,
+  "model": {"learning_rate": 0.08, "max_iter": 120, "max_leaf_nodes": 15, "min_samples_leaf": 60, "l2_regularization": 1.0, "early_stopping": false, "random_state": 17},
+  "variants": {"learned_frame": "frame", "learned_spell": "spell"},
+  "confirmation_s": [0.4, 0.8, 1.6],
+  "switch_confidence": 0.55,
+  "selection": "Select variant and confirmation by mean development out-of-fold spellF1, equal match/regime weighting, macroF1 tie-break. Dead evidence for each development fold is refitted with the frozen selected dead parameters on the other three development fixtures only. Never use the all-four-match dead model for development selection.",
+  "note": "No new Viterbi decoder or dead-mask smoothing. Owners use prior and future confirmed geometric anchors, movement and missingness. All H/A/D decisions inside published periods; low-confidence/no-anchor cases remain explicit diagnostics rather than X. No competition data or labels."
+}

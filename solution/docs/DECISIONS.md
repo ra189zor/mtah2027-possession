@@ -50,3 +50,7 @@ The user's subsequent review supersedes the decoder-first next step. Oracle expe
 ## First learned dead classifier — 30 October 2026
 
 Completed the next authorized evidence checkpoint using four development fixtures and both original validation fixtures. Model/threshold selection used development match folds only; validation was frozen and no decoder was added. Selected frame weighting rather than spell weighting based on the prespecified development D-F1 criterion. High binary D accuracy does not make the unsmoothed ownership overlay a replacement for the fallback: it still overfragments and leaves ownership unknown, and noisy J03WR9 spellF1 regresses versus the previous rule solver. Preserve all candidates and the baseline; next work is gap-aware ownership. See `DEAD_BALL_MODEL.md`.
+
+## Bidirectional ownership — 30 October 2026
+
+Completed the next authorized checkpoint with labels excluded from gap-feature extraction. Selected spell-weighted conditional ownership and 0.8 s confirmation using development interval scores. All development folds used dead models trained on other fixtures, and validation retained the frozen all-four-match dead model. Zero playing-period X is achieved by making decisions with explicit low-confidence diagnostics, not by proving every hidden possession recovered. Noisy counts remain too high; audits identify many false-alive islands within reference stoppages. Next is temporal decoding over the stronger evidence. See `GAP_OWNERSHIP.md`; no validation-driven candidate substitution or threshold changes were made.
