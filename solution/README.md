@@ -1,6 +1,8 @@
 # More Than A Hack 2027 solution workspace
 
-Status: Steps 1–6, oracle diagnosis, learned dead evidence, gap-aware ownership and three-state temporal decoding are complete. Development-selected fixed costs improve moderate external spellF1 to 0.5163 / 0.4969; both opened fixtures meet the approximate ±20% count gate with zero playing-period X. Undercounting remains. See `docs/TEMPORAL_DECODER.md` for run commands, limitations and results. Broader nested validation and final inference packaging remain pending.
+Status: Steps 1–6, learned evidence, ownership recovery, temporal decoding and seven-match nested validation are complete. Mean outer spellF1 is 0.4916 moderate / 0.4718 contextual; all predictions have zero playing-period X. Provider-label counts pass the approximate ±20% gate on only 2/7 moderate fixture averages, and label convention materially changes the count diagnosis. Nested cost selection adds negligible gain over previous fixed costs. See `docs/NESTED_VALIDATION.md` for results, limitations and reproduction. Final end-to-end inference packaging remains pending.
+
+Short-possession recovery experiments are also complete: a control boost improves moderate count passes to 3/7 with mean spellF1 0.4892, while boundary-aware ownership training does not improve the provider objective. Original heads/decoder remain preferred; no experimental candidate is silently substituted. All 83 tests pass. See `docs/SHORT_POSSESSIONS.md` for methods, audits and both label conventions.
 
 The project root is the intended Git repository root. This `solution/` directory contains our code, configuration and documentation. A single project-root `.gitignore` excludes the virtual environment, original downloads, prepared match inputs, generated reports and local annotations. Committing and pushing are handled by the user. The previous Step 1 local Git metadata is preserved under ignored `.local-git/solution.git`; `solution/` is now a normal directory.
 

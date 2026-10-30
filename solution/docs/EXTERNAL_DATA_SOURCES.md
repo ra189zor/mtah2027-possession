@@ -20,3 +20,5 @@ Ownership codes mean provider-recorded ownership; their convention is not assume
 The mirror's README lists two match IDs that differ from its actual file inventory. The fixed split uses the seven IDs present in the inventory and in kloppy's documented table: J03WMX, J03WN1, J03WPY, J03WOH, J03WOY, J03WQQ and J03WR9. The inventory and source revision are recorded locally; no file names are guessed from the stale card alone.
 
 Raw external files, transformed arrays and generated benchmark reports are not committed. Keep this attribution with any future publication of results or code, and preserve the licence and modification notice if distributing derivatives later.
+
+30 October 2026 expansion: the seven-match protocol opened J03WN1 (Bochum–Leverkusen) at the same pinned revision, replacing its historical sealed role without changing the old split file. It adds input-only contextual corruption and an evaluation-only short-opposition-spell label sensitivity; both transformations and their limitations are documented in `NESTED_VALIDATION.md`. Original provider references remain available and are reported alongside the alternate convention.

@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "switch_costs": [1, 2, 4, 8],
+  "control_strengths": [0, 0.5, 1],
+  "control_distance_m": 2.5,
+  "opponent_margin_m": 1.0,
+  "maximum_ball_speed_mps": 15,
+  "maximum_speed_difference_mps": 8,
+  "confirmation_frames": 3,
+  "control_probability": 0.95,
+  "maximum_inner_spell_loss_for_balanced": 0.005,
+  "count_tolerance": 0.2,
+  "workers": 4,
+  "protocol": "Preserve all frozen learned heads, native probabilities, dead evidence and prior nested stop/restart costs. Add a tracking-only short-control log-odds residual and lower owner-switch costs. Select only on existing inner predictions, excluding the outer match. Contextual noise and alternate labels remain evaluation-only. All seven outer matches have already been opened, so this is an adaptive follow-up and not a new independent test.",
+  "selection": "Score-first: maximize inner provider spellF1, macroF1 tie-break, equal match/regime weighting. Count-balanced: among candidates within 0.005 mean spellF1 of original inner reference, maximize fraction of moderate inner fixtures within 20% count error, then minimize mean absolute moderate count error, then maximize spellF1. Report both without choosing based on outer results.",
+  "control_note": "Signed log-odds evidence requires an observed ball within 2.5 m of the favored team and at least 1 m closer than the opponent, ball speed at most 15 m/s, favored-player ball speed difference at most 8 m/s, and three consecutive supporting native frames. Backdate confirmed runs. Missing/invalid features add zero evidence; do not infer across gaps or halves. Add strength times logit(0.95) to learned ownership log odds. Do not alter Pdead. This is physical proximity evidence, not proof of controlled possession."
+}

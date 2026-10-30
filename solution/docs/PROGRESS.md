@@ -129,9 +129,34 @@ Details: `GAP_OWNERSHIP.md`.
 
 Details and reproduction: `TEMPORAL_DECODER.md`.
 
-## Next — broader validation, not started
+## Seven-match nested validation — complete, 30 October 2026
 
-All-seven nested outer-match validation, sensitivity labels and stronger corruptions remain planned; that future protocol will explicitly replace the old sealed role. Historical split files remain unchanged. Final learned inference packaging follows validation; the current decoder runner consumes cached external probabilities.
+- Explicitly replaced the historical sealed-fixture role with seven outer folds in a new protocol; opened Bochum–Leverkusen at the existing pinned revision. Old split/guards and model sources remain unchanged.
+- Completed 21 five-match inner head pairs, 7,350 decoder candidate scores and seven six-match outer fits. Decoder selection excludes the outer fixture; historically selected head architectures remain fixed and their adaptation limitation is documented.
+- Evaluated 70 external input cases, four algorithms and two reference conventions (560 rows). Added input-only contextual dropout, ghost balls and wrong-team bursts as an unseen evaluation stress mixture.
+- Mean provider spellF1 is 0.6014 clean / 0.4916 moderate / 0.4317 severe / 0.4718 contextual. Decoder beats gap composition on all seven fixtures under each condition; noisy paired conditional intervals exclude zero on all seven.
+- Nested costs give negligible provider-label gain over the prior fixed decoder. Provider count gates pass only 3/7 clean, 2/7 moderate, 0/7 severe and 2/7 contextual fixture averages. Alternate labels change those gates materially; this does not resolve the convention mismatch.
+- All 78 tests pass; 616 independent artifact hash checks, 28 serialized training-membership checks, seven exact probability-reload probes and 70 external CSV validations pass. No playing-period X.
+- No competition-data inference/evaluation, new dependencies, commit, push or submission. No final all-seven deployment model was fitted.
+
+Details, full limitations and commands: `NESTED_VALIDATION.md`.
+
+## Short-possession recovery investigation — complete, 30 October 2026
+
+- Diagnosed all seven fixtures on clean/moderate seed 17: true dead masks provide a small clean score gain, while true owner evidence nearly resolves clean errors. Short provider possessions remain weak before decoding.
+- Froze 12 physical-control/switch-cost candidates and selected them from the existing disjoint inner predictions (3,528 scores), before 70-case outer evaluation under both reference conventions.
+- Every score-first fold retains the original. Count-balanced control boosts improve moderate provider count passes from 2/7 to 3/7, with mean spellF1 0.4916 → 0.4892 and worse alternate-label segmentation. Retained as an explicit experimental tradeoff, not a best-solver replacement.
+- Tested fixed reference-aware boundary sampling, covering all training spells versus 94.41% previously, with seven new six-match ownership fits and unchanged features/dead evidence/decoder costs. Provider count/score performance regresses; the new head is not promoted. Half blending helps absorbed-label scores, emphasizing convention sensitivity.
+- All 83 tests pass. Postprocessor and training audits verify 602 / 301 hashes, exact comparator reproduction and exact repetition/validation of 140 / 140 external CSVs. Original sources, model artifacts and probabilities stay unchanged.
+- No competition-data inference/evaluation, new package/download, commit or push. No demonstrated overall provider-score improvement is claimed.
+
+Full results and reproduction: `SHORT_POSSESSIONS.md`.
+
+## Remaining — end-to-end packaging and ownership research
+
+Package a frozen learned pipeline and reproducible single-command inference with dependency/model provenance, exact output validation and no reference-label dependency. Preserve the previous fixed decoder as a reference: nested selection did not establish a useful replacement. Count/boundary failures and label sensitivity remain explicit quality limitations; do not silently retune on opened outer results.
+
+The user's subsequent improvement request added the completed experiments above before packaging. A learned switch-event/boundary objective is a possible next research hypothesis, not an implemented or validated improvement. Do not increase predicted counts merely to pass the diagnostic heuristic or select the more favorable reference convention.
 
 ## Outstanding administrative information
 

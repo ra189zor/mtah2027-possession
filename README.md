@@ -4,7 +4,9 @@ Football possession segmentation from noisy tracking data and tactical events fo
 
 ## Current status
 
-Steps 1–6, external oracle diagnosis, learned dead evidence, gap-aware ownership and three-state temporal decoding are complete. Moderate external spellF1 is now 0.5163 / 0.4969 on the two opened validation fixtures; counts meet the approximate ±20% gate and playing periods contain no X. Remaining undercounting and broader validation are documented in `solution/docs/TEMPORAL_DECODER.md`, including run commands. End-to-end learned challenge inference and final packaging remain pending; previous systems are preserved.
+Steps 1–6, learned evidence, gap-aware ownership, temporal decoding and seven-match nested external validation are complete. Across seven outer folds, mean spellF1 is 0.4916 under moderate noise and 0.4718 with contextual dropout, ghost balls and wrong-team tracks. The decoder beats gap composition on every match, with zero playing-period X, but provider-label count targets pass on only two of seven moderate fixture averages. See `solution/docs/NESTED_VALIDATION.md` for both label conventions, limits and reproduction. End-to-end learned inference packaging remains pending; previous systems are preserved.
+
+A subsequent short-possession investigation tested lower switch costs, tracking-only control evidence and boundary-aware training. A count-balanced option raises moderate count passes to 3/7 with slightly lower spellF1; no unconditional replacement is promoted. The preferred provider-score reference remains unchanged. See `solution/docs/SHORT_POSSESSIONS.md` for the complete positive/negative results and label-convention tradeoffs.
 
 ## Project layout
 
@@ -44,7 +46,7 @@ This rebuilds all four baselines twice, validates them, checks labels and repeat
 
 ## External validation
 
-The frozen whole-match split and noise scenarios are in `solution/configs/validation.json`. Four public Sportec/DFL development fixtures and two validation fixtures are prepared locally; the sealed fixture is untouched in the current protocol. Inputs and reference labels remain separate. See `solution/docs/TEMPORAL_DECODER.md` for current results and `solution/docs/EXTERNAL_DATA_SOURCES.md` for attribution. The planned all-seven nested validation will explicitly replace the historical sealed-fixture role.
+The historical split and original noise scenarios remain in `solution/configs/validation.json`. The completed seven-match protocol in `solution/configs/nested_validation.json` explicitly replaces the old sealed role: all seven public Sportec/DFL fixtures are now opened outer-test fixtures. Inputs and reference labels remain separate. See `solution/docs/NESTED_VALIDATION.md` for current results and `solution/docs/EXTERNAL_DATA_SOURCES.md` for attribution. Historical experiments and their split guards remain unchanged.
 
 ```powershell
 & '.\.venv\Scripts\python.exe' -m unittest discover -s solution/tests -v

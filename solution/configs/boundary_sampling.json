@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "sampling_stride_frames": 25,
+  "inside_boundary_offsets_frames": [0, 3],
+  "include_spell_midpoint": true,
+  "weighting": "Exactly equal total sampled weight per provider H/A spell, equal match/regime mass; noisy seeds share regime mass. No D labels in owner training. Reference labels determine supervised sample selection only and never enter input features.",
+  "blend_strengths": [0.5, 1.0],
+  "workers": 4,
+  "threads_per_worker": 2,
+  "protocol": "Fixed training-procedure ablation frozen after postprocessor failure, before fitting. Refit only the unchanged ownership HGB architecture on the other six fixtures for each outer fold. Keep original dead probabilities and original nested decoder costs. Evaluate prespecified half blend and new head without tuning on outer outcomes; no new inner search is claimed. All outer fixtures were already opened, so this is adaptive research, not an independent final test. Contextual noise and alternate labels remain evaluation only."
+}

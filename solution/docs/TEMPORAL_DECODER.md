@@ -1,5 +1,7 @@
 # Three-state temporal decoder
 
+Historical checkpoint: the subsequent seven-match nested validation is complete in `NESTED_VALIDATION.md`. Its broader count failures and label-convention sensitivity qualify the two-fixture results below. J03WN1 is now opened under that new protocol; references to its untouched role below describe this earlier checkpoint only.
+
 Completed 30 October 2026. Exact offline Viterbi decoding improves external possession segmentation over the frozen gap-aware system. Moderate counts now meet the approximate ±20% gate on both opened validation fixtures. The system still undercounts and misses boundaries; this is a completed decoder checkpoint, not a claim of competition readiness or ranking.
 
 ## Evidence and algorithm

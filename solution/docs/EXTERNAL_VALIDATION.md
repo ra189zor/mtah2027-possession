@@ -1,6 +1,6 @@
 # Step 4: initial external validation benchmark
 
-This is the historical two-fixture checkpoint. The later six-fixture learned-evidence experiment and its development-fold protocol are documented in `DEAD_BALL_MODEL.md`; the original split remains unchanged for that experiment.
+This is the historical two-fixture checkpoint. Later learned-evidence experiments are documented in `DEAD_BALL_MODEL.md`, and the completed seven-match nested protocol in `NESTED_VALIDATION.md`. The latter explicitly opens J03WN1 for outer validation; the sealed status described below is historical. Original split files and old guards remain unchanged.
 
 Completed **28 October 2026**. The benchmark infrastructure runs on one development fixture and one separate validation fixture. This is an initial benchmark, not a claim that our improved algorithm generalizes or that synthetic data reproduces the challenge exactly.
 
