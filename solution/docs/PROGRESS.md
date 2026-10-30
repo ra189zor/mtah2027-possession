@@ -81,9 +81,19 @@ Details and limitations: `FEATURE_EXTRACTION.md`. These are feature-correctness 
 
 See `FALLBACK_SOLVER.md` for results, coverage tradeoffs and failure taxonomy. Two fixtures and tracking-only external tests do not establish challenge performance or tag accuracy.
 
-## Next — Step 7, not started
+## Oracle diagnosis — complete, 30 October 2026
 
-Implement and compare a structured temporal decoder with the preserved fallback. Expand development coverage before substantial model selection. Await the user's explicit instruction to continue.
+- Ran three principal external-only oracles plus two abstention/component sensitivity checks on clean and three moderate-noise replicas of J03WQQ.
+- Both-true spellF1 and macroF1 equal 1.0 in every condition; all frozen solver/baseline results reproduce.
+- Perfect dead evidence helps, but owner identity/timing and abstention recovery also impose a large interval-score limit.
+- Added paired conditional possession-bootstrap differences, with scope and limitations documented.
+- Passed all 47 tests; preserved frozen sources, configurations and source arrays. No new data, fitting, decoder, dependencies, commits or pushes.
+
+Details: `ORACLE_DIAGNOSIS.md`.
+
+## Next — learned evidence, not started
+
+The user's revised order supersedes the decoder-first Step 7 proposal: learn dead-ball evidence from player behavior and available ball cues, then add bidirectional gap-aware ownership before the three-state decoder. Expand to a versioned seven-fixture outer-match validation protocol before selection. The old sealed role will not survive all-seven cross-validation; historical split files remain unchanged. No new model or decoder has been implemented in this oracle checkpoint.
 
 ## Outstanding administrative information
 

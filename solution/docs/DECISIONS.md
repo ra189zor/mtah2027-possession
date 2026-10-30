@@ -42,3 +42,7 @@ Features use metres/seconds and carry validity masks; missing observations never
 ## First solver — 30 October 2026
 
 Selected the `responsive` state-machine profile from three presets using development spellF1, weighted equally across clean/moderate/severe regimes. Validation used only the frozen winner, with no retuning. Keep the full valid challenge artifact as a fallback, alongside the unchanged official baseline. Improved temporal scores coexist with substantial noisy-input abstention and weaker noisy frame metrics; broader coverage and tag validation remain open. See `FALLBACK_SOLVER.md`. The structured decoder is Step 7 and has not started.
+
+## Revised order after oracle diagnosis — 30 October 2026
+
+The user's subsequent review supersedes the decoder-first next step. Oracle experiments are complete; learn stronger dead evidence and bidirectional ownership before decoder tuning. Both errors matter for spellF1 despite high team accuracy on committed frames. See `ORACLE_DIAGNOSIS.md` for definitions, results, gates and the new order. The requested all-seven leave-one-match-out protocol will replace the original sealed-fixture role when implemented; retain historical manifests and do nested training-fold selection. No public-window duration target becomes a model prior. External-only numeric reporting remains in force.

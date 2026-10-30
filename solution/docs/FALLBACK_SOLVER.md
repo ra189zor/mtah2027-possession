@@ -1,5 +1,7 @@
 # Step 6: deterministic possession solver
 
+Subsequent external oracle results and the revised implementation order are in `ORACLE_DIAGNOSIS.md`. They supersede this checkpoint's proposal to build the decoder immediately next.
+
 Completed 30 October 2026. The first solver combines owner confirmation, limited persistence, separate stoppage detection and optional automatic-tag evidence. The selected `responsive` profile improved spellF1 over the official ±50-frame baseline on the two evaluated external fixtures, including their fixed stress cases. This is limited external evidence, not an estimate of challenge rank.
 
 ## Algorithm

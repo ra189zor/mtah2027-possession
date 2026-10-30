@@ -4,7 +4,7 @@ Football possession segmentation from noisy tracking data and tactical events fo
 
 ## Current status
 
-Steps 1–6 are complete. The first geometry/persistence/stoppage solver improves external spellF1 over the official ±50 baseline on the two evaluated fixtures, and produces a valid full challenge CSV. Noisy-input coverage remains limited. Results and limitations: `solution/docs/FALLBACK_SOLVER.md`. Step 7 is a structured temporal decoder, after explicit instruction to continue.
+Steps 1–6 are complete. The first geometry/persistence/stoppage solver improves external spellF1 over the official ±50 baseline on the two evaluated fixtures, and produces a valid full challenge CSV. Noisy-input coverage remains limited. Results and limitations: `solution/docs/FALLBACK_SOLVER.md`. External oracle diagnosis is now complete; learned dead-ball evidence and gap-aware ownership precede decoder work under the revised plan in `solution/docs/ORACLE_DIAGNOSIS.md`.
 
 ## Project layout
 
