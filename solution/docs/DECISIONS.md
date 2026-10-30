@@ -46,3 +46,7 @@ Selected the `responsive` state-machine profile from three presets using develop
 ## Revised order after oracle diagnosis — 30 October 2026
 
 The user's subsequent review supersedes the decoder-first next step. Oracle experiments are complete; learn stronger dead evidence and bidirectional ownership before decoder tuning. Both errors matter for spellF1 despite high team accuracy on committed frames. See `ORACLE_DIAGNOSIS.md` for definitions, results, gates and the new order. The requested all-seven leave-one-match-out protocol will replace the original sealed-fixture role when implemented; retain historical manifests and do nested training-fold selection. No public-window duration target becomes a model prior. External-only numeric reporting remains in force.
+
+## First learned dead classifier — 30 October 2026
+
+Completed the next authorized evidence checkpoint using four development fixtures and both original validation fixtures. Model/threshold selection used development match folds only; validation was frozen and no decoder was added. Selected frame weighting rather than spell weighting based on the prespecified development D-F1 criterion. High binary D accuracy does not make the unsmoothed ownership overlay a replacement for the fallback: it still overfragments and leaves ownership unknown, and noisy J03WR9 spellF1 regresses versus the previous rule solver. Preserve all candidates and the baseline; next work is gap-aware ownership. See `DEAD_BALL_MODEL.md`.

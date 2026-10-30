@@ -35,6 +35,7 @@ reports/
 *.npy
 *.npz
 *.pkl
+*.joblib
 *.parquet
 *_possession_gt.csv
 *_possession_gt_meta.json

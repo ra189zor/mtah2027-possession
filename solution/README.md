@@ -1,6 +1,6 @@
 # More Than A Hack 2027 solution workspace
 
-Status: Steps 1–6 complete. The first deterministic solver produces a valid full challenge CSV and improves external spellF1 on the two evaluated fixtures, with substantial abstention under noise. See `docs/FALLBACK_SOLVER.md` for results, reproduction and limits. External oracle diagnosis is complete; `docs/ORACLE_DIAGNOSIS.md` replaces the immediate decoder proposal with learned dead evidence and gap recovery first.
+Status: Steps 1–6, oracle diagnosis and the first learned dead-ball evidence checkpoint are complete. Four development match folds selected a CPU boosted-tree model; evaluation on two validation fixtures shows high D recall, while ownership gaps and fragmentation remain. See `docs/DEAD_BALL_MODEL.md` for results, ablations and limits. Gap-aware ownership is next; no new decoder has been implemented.
 
 The project root is the intended Git repository root. This `solution/` directory contains our code, configuration and documentation. A single project-root `.gitignore` excludes the virtual environment, original downloads, prepared match inputs, generated reports and local annotations. Committing and pushing are handled by the user. The previous Step 1 local Git metadata is preserved under ignored `.local-git/solution.git`; `solution/` is now a normal directory.
 

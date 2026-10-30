@@ -4,7 +4,7 @@ Football possession segmentation from noisy tracking data and tactical events fo
 
 ## Current status
 
-Steps 1–6 are complete. The first geometry/persistence/stoppage solver improves external spellF1 over the official ±50 baseline on the two evaluated fixtures, and produces a valid full challenge CSV. Noisy-input coverage remains limited. Results and limitations: `solution/docs/FALLBACK_SOLVER.md`. External oracle diagnosis is now complete; learned dead-ball evidence and gap-aware ownership precede decoder work under the revised plan in `solution/docs/ORACLE_DIAGNOSIS.md`.
+Steps 1–6 and external oracle diagnosis are complete. A learned dead-ball model is now selected through four development match folds and evaluated on two validation fixtures. Dead recall improves substantially; the integration still has ownership unknowns and fragmented possessions. See `solution/docs/DEAD_BALL_MODEL.md`. The next step is gap-aware ownership before decoder work; the original fallback is preserved.
 
 ## Project layout
 

@@ -91,9 +91,22 @@ See `FALLBACK_SOLVER.md` for results, coverage tradeoffs and failure taxonomy. T
 
 Details: `ORACLE_DIAGNOSIS.md`.
 
-## Next — learned evidence, not started
+## Learned dead-ball evidence — complete, 30 October 2026
 
-The user's revised order supersedes the decoder-first Step 7 proposal: learn dead-ball evidence from player behavior and available ball cues, then add bidirectional gap-aware ownership before the three-state decoder. Expand to a versioned seven-fixture outer-match validation protocol before selection. The old sealed role will not survive all-seven cross-validation; historical split files remain unchanged. No new model or decoder has been implemented in this oracle checkpoint.
+- Expanded the original split to four prepared development and two validation fixtures; sealed J03WN1 remains untouched in this checkpoint.
+- Added 275 label-free multi-second movement/formation/ball/missingness features and a 228-column ball-independent player ablation.
+- Fixed model settings and three weighting/feature variants before fitting; used 12 development match-fold fits and 252 threshold/condition scores for selection.
+- Selected full features/frame weighting at threshold 0.50. Trained three final candidates on four development fixtures, then evaluated them once on both validation fixtures (70 rows), without retuning.
+- Learned moderate D recall is 93.9% / 94.8% on J03WQQ / J03WR9, with 95.4% / 94.6% precision. Ball-missing and player-only diagnostics confirm useful player evidence.
+- Retained the original ownership rules for the integration diagnostic. Its noisy J03WR9 spellF1 trails the old rule solver despite better D detection; X and count gates remain unmet.
+- All 55 tests pass; model serialization probes and 14 frozen baseline/solver comparisons match exactly. Pinned CPU dependencies; models/caches remain ignored by the single root ignore file.
+- No competition-data inference/evaluation, new decoder, commit, push or submission.
+
+Methods, results, calibration, paired intervals and failure analysis: `DEAD_BALL_MODEL.md`.
+
+## Next — gap-aware ownership, not started
+
+Add bidirectional ownership evidence before the three-state decoder. Preserve the frozen fallback and learned dead classifier, evaluate true interval alignment and recover missing ownership without using references as inputs. All-seven outer-match validation, sensitivity labels and stronger corruptions remain planned; that future protocol will explicitly replace the old sealed role. Historical split files remain unchanged.
 
 ## Outstanding administrative information
 

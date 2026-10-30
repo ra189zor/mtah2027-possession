@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "development_matches": ["J03WPY", "J03WOH", "J03WOY", "J03WMX"],
+  "validation_matches": ["J03WQQ", "J03WR9"],
+  "model": {"learning_rate": 0.08, "max_iter": 150, "max_leaf_nodes": 15, "min_samples_leaf": 60, "l2_regularization": 1.0, "early_stopping": false, "random_state": 17},
+  "variants": {"full_frame": {"features": "full", "weighting": "frame"}, "full_spell": {"features": "full", "weighting": "spell"}, "player_spell": {"features": "player", "weighting": "spell"}},
+  "thresholds": [0.35, 0.5, 0.65],
+  "selection": "Maximize development leave-one-match-out mean binary dead F1, equal weight per match and clean/moderate/severe regime. Tie-break on dead recall, then variant name and threshold. No validation tuning.",
+  "training_stride_frames": 25,
+  "sample_weight_cap": 10.0,
+  "threads": 4,
+  "windows_s": [2, 5],
+  "long_motion_lag_frames": 25,
+  "walking_speed_mps": 0.8,
+  "player_boundary_radius_m": 3.0,
+  "cluster_radius_m": 3.0,
+  "note": "Train at approximately 1 Hz, infer at native 25 Hz. All source frames contribute to label-free temporal features. Fixed settings before model fitting. Calibration is measured, not assumed, especially with spell weights. Published-period masks only; no competition inputs or labels."
+}
