@@ -164,9 +164,21 @@ Full results and reproduction: `SHORT_POSSESSIONS.md`.
 
 Details and reproduction: `SWITCH_EVENTS.md`.
 
-## Remaining — end-to-end packaging and convention validation
+## End-to-end inference packaging — complete, 1 November 2026
 
-Package a frozen learned pipeline and reproducible single-command inference with dependency/model provenance, exact output validation and no reference-label dependency. Preserve the previous fixed decoder as a reference: nested selection did not establish a useful replacement. Count/boundary failures and label sensitivity remain explicit quality limitations; do not silently retune on opened outer results.
+- Added `solution/predict.py` and a tracking-only inference module, with no research-runner or reference-loader imports. Requires an explicit baseline/event2/event4 variant and writes a validated CSV plus provenance/timing sidecar.
+- Fitted final dead/owner heads on all seven external fixtures (280,720 / 154,818 sampled rows). Fitted the final switch head on 327,846 sampled rows using 49 six-match OOF upstream cases, each excluding the training fixture. No competition/contextual/alternate labels enter fitting.
+- Kept the original fixed 40/40/8 deployment profile and all existing feature/model settings. Embedded configuration, exact source/package hashes, input/model schemas, data attribution and training membership in `models/possession-v1/manifest.json`.
+- Inference needs only the bundle's manifest/model payload and matching repository, not research caches, targets, training checkpoints or evaluation reports. Source/weight/settings checks reject incompatible or altered bundles; existing outputs are protected.
+- Exported separate six-match verification models excluding J03WN1. Nine raw-input runs across clean/moderate/contextual noise and all three variants reproduce frozen held-out CSVs byte for byte. Four final-bundle behavioral runs and a separate minimal two-file portability run pass with identical repeated predictions.
+- All 14 subprocesses run from an unrelated directory under reference/research access guards. All 95 tests pass. The provided format validator accepts outputs; inference does not score quality or read labels.
+- Implemented the local tactical `--challenge` adapter using the earlier verified metadata/raw-tracking loader, but did not execute full competition-input inference in this checkpoint. No competition numbers, new dependencies/downloads, commit, push or submission.
+
+Commands, provenance and exact verification limits: `INFERENCE.md`.
+
+## Remaining — final verification, then submission package
+
+Broaden final verification and clean reproduction/distribution checks, then finish the technical/submission package. The single-command runner and local model bundle now exist. Preserve the original and both event variants explicitly; count/boundary failures and label sensitivity remain quality limitations, and no final all-seven training-match smoke score should be reported as held-out performance.
 
 The user's subsequent improvement requests added the completed experiments above before packaging. The switch-event objective now has measured provider-label gains, but the semantic tradeoff still needs independent controlled-possession evidence before declaring a universal default. Keep both fixed event variants and the original reference explicit; do not increase predicted counts merely to pass the diagnostic heuristic or select the more favorable reference convention.
 

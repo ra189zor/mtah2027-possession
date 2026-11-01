@@ -1,8 +1,10 @@
 # More Than A Hack 2027 solution workspace
 
-Status: Steps 1–6, learned evidence, ownership recovery, temporal decoding, seven-match validation and learned switch-event experiments are complete. Stronger event rewards improve moderate provider spellF1 from 0.4916 to 0.5046 and count passes from 2/7 to 4/7, with zero playing-period X. All 90 tests pass. Alternate-label scores regress, false switches remain and no automatic universal default is substituted. End-to-end inference packaging remains pending.
+Status: Steps 1–6, learned evidence, ownership recovery, temporal decoding, seven-match validation, learned switch events and end-to-end inference packaging are complete. Stronger event rewards improve recorded moderate provider spellF1 from 0.4916 to 0.5046 and count passes from 2/7 to 4/7, with zero playing-period X. Alternate-label regressions remain, so variant choice is explicit. All 95 tests pass.
 
 See `docs/SWITCH_EVENTS.md` for current results, cross-fitting, audits and commands. `docs/NESTED_VALIDATION.md` records the original broader benchmark; `docs/SHORT_POSSESSIONS.md` retains the earlier control/sampling tradeoffs and negative results. No competition performance or submission readiness is claimed.
+
+Run `predict.py` from the project root using `--bundle models/possession-v1`, either `--input <tracking.npz>` or `--challenge`, an explicit `--variant baseline|event2|event4`, and `--output <prediction.csv>`. The final bundle is fitted on all seven external fixtures; its own smoke predictions are not a new held-out quality estimate. See `docs/INFERENCE.md` for a copyable command, all input fields, bundle rebuild/export commands, nine exact held-out raw-pipeline checks and guarded two-file portability. Broader final verification and submission packaging remain next.
 
 The project root is the intended Git repository root. This `solution/` directory contains our code, configuration and documentation. A single project-root `.gitignore` excludes the virtual environment, original downloads, prepared match inputs, generated reports and local annotations. Committing and pushing are handled by the user. The previous Step 1 local Git metadata is preserved under ignored `.local-git/solution.git`; `solution/` is now a normal directory.
 

@@ -1,5 +1,7 @@
 # Learned possession-switch events
 
+The subsequent runnable-pipeline checkpoint is complete in `INFERENCE.md`. It fits final all-seven external deployment heads and packages all three explicit variants; the seven-fold quality results below still refer to disjoint evaluation models, not those final fits.
+
 Completed 1 November 2026 after the user's authorization to test direct switch-event learning. All seven outer models, 70 external cases, both fixed reward strengths and the independent audit are complete. Provider-label spellF1 improves, and the stronger reward raises moderate count passes from 2/7 to 4/7. Both variants regress on absorbed-under-3-second references, so the experiment establishes a provider-convention improvement rather than an unconditional new default or competition result. Existing heads/decoder artifacts remain intact.
 
 ## Separate the event task from ownership classification

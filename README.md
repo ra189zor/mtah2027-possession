@@ -6,7 +6,15 @@ Football possession segmentation from noisy tracking data and tactical events fo
 
 Steps 1–6, learned evidence, gap-aware ownership, temporal decoding, seven-match external validation and learned switch-event experiments are complete. The stronger fixed event reward improves mean moderate provider-label spellF1 from 0.4916 to 0.5046 and count passes from 2/7 to 4/7. Contextual-noise spellF1 improves from 0.4718 to 0.4837. All predictions have zero playing-period X; all 90 tests and the cross-fitting/repetition audit pass.
 
-The event variants regress under absorbed-short-spell references, so they and the original remain explicit research choices rather than a universal default. False switches and three moderate count failures remain. Current methods, both label conventions, limitations and commands are in `solution/docs/SWITCH_EVENTS.md`; earlier validation and rejected/tradeoff experiments are in `NESTED_VALIDATION.md` and `SHORT_POSSESSIONS.md` under the same docs folder. End-to-end inference packaging remains pending; no competition result or submission readiness is claimed.
+The event variants regress under absorbed-short-spell references, so they and the original remain explicit choices rather than a universal default. False switches and three moderate count failures remain. Methods and label-convention results are in `solution/docs/SWITCH_EVENTS.md`.
+
+End-to-end inference is now runnable with a final all-seven external model bundle and an explicit variant. All 95 tests pass; nine guarded held-out raw-input runs reproduce earlier CSVs exactly. From the project root:
+
+```powershell
+& '.\.venv\Scripts\python.exe' solution/predict.py --bundle models/possession-v1 --input data/external/sportec/J03WN1/prepared/inputs.npz --variant event4 --output outputs/my_prediction.csv
+```
+
+Use `baseline`, `event2` or `event4`; see `solution/docs/INFERENCE.md` for inputs, the challenge adapter, model provenance, guard/repeatability results and limitations. The local model bundle is ignored by Git and must be supplied separately or rebuilt on another machine. Final verification and submission packaging remain pending; no competition quality score or submission readiness is claimed.
 
 ## Project layout
 

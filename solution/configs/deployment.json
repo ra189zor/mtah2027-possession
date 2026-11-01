@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "decoder": {"id": "fixed_s40_r40_o8", "mode": "fixed", "stop": 40, "restart": 40, "switch": 8},
+  "epsilon": 0.000001,
+  "variants": {"baseline": 0, "event2": 2, "event4": 4},
+  "threads": 4,
+  "policy": "Require an explicit inference variant. Retain the original development-selected fixed 40/40/8 profile; do not choose a new global profile from opened outer results. Final heads train on all seven external fixtures. Final event training uses each fixture's existing six-match out-of-fold upstream predictions, excluding that fixture. All hyperparameters and corruption conditions stay frozen. No competition inputs/references participate in fitting."
+}
