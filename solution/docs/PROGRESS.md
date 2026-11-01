@@ -195,9 +195,13 @@ Prepared the technical/submission deliverables with code/runtime dependency/mode
 
 The user's subsequent improvement requests added the completed experiments above before packaging. The switch-event objective now has measured provider-label gains, but the semantic tradeoff still needs independent controlled-possession evidence before declaring a universal default. Keep both fixed event variants and the original reference explicit; do not increase predicted counts merely to pass the diagnostic heuristic or select the more favorable reference convention.
 
+## Team-name update — 1 November 2026
+
+Registered team name confirmed as **AOM**. Current package: `outputs/submission/AOM_20261101/`, with `AOM.csv` and `AOM.md` for each of the three preserved variants. This supersedes the earlier name deferral; primary variant selection remains pending. See `DELIVERY.md`.
+
 ## Outstanding administrative information
 
-Team-name/member confirmation, signed terms review and external-benchmark review availability remain open. See `DECISIONS.md`. They were not needed for the environment installation and do not imply an uncompleted setup task.
+Member confirmation, signed terms review and external-benchmark review availability remain open. Team name is confirmed as AOM; primary variant remains pending. See `DECISIONS.md`. They were not needed for the environment installation and do not imply an uncompleted setup task.
 
 ## Plan update — 28 October 2026
 

@@ -97,8 +97,11 @@ def verify(package, python):
         guard = json.loads(record.read_text())
         if guard['status'] != 'passed' or guard['forbidden_access_attempts'] or guard['quality_scoring_performed']:
             raise ValueError('Isolated inference guard failed')
-        candidate = package/'private_candidates'/variant/'mtah2027-possession.csv'
         expected = index['candidates'][variant]
+        candidate_name = expected.get('csv_filename', 'mtah2027-possession.csv')
+        if Path(candidate_name).name != candidate_name:
+            raise ValueError('Unsafe candidate filename')
+        candidate = package/'private_candidates'/variant/candidate_name
         if sha(candidate.read_bytes()) != expected['prediction_sha256'] or output.read_bytes() != candidate.read_bytes():
             raise ValueError('Candidate reproduction differs')
         report = candidate.with_suffix('.md').read_bytes()
@@ -113,7 +116,7 @@ def verify(package, python):
     result = {'status': 'passed', 'public_archive_sha256': sha(archive.read_bytes()),
               'strict_public_inventory_passed': True, 'extracted_checksums_passed': True,
               'python': str(python), 'candidates': results,
-              'team_name': None, 'primary_variant': None, 'published': False, 'submitted': False}
+              'team_name': index['team_name'], 'primary_variant': None, 'published': False, 'submitted': False}
     (package/'VERIFICATION.json').write_bytes(encoded(result))
     print('PASS: archive boundaries, checksums and exact isolated reproduction of all three candidates.')
 

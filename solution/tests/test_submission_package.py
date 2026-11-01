@@ -54,3 +54,8 @@ class SubmissionPackageTests(unittest.TestCase):
             self.assertIn('Pending registered team name', rendered)
             self.assertIn('no primary variant selected', rendered)
             self.assertIn('--variant ' + variant, rendered)
+            named = report(variant, 'AOM').decode()
+            self.assertIn('**Team:** AOM', named)
+            self.assertIn('outputs/AOM.csv', named)
+            self.assertNotIn('team name pending', named)
+            self.assertIn('no primary variant selected', named)

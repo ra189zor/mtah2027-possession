@@ -42,14 +42,25 @@ def runtime_paths():
         'models/possession-v1/manifest.json', 'models/possession-v1/models.joblib'}
 
 
-def report(variant):
+def team_stem(team_name):
+    if team_name is None:
+        return 'mtah2027-possession'
+    if (not team_name or team_name != team_name.strip() or team_name.endswith('.')
+            or any(c in '<>:"/\\|?*' or ord(c) < 32 for c in team_name)
+            or team_name.split('.')[0].upper() in {'CON', 'PRN', 'AUX', 'NUL',
+                *('COM'+str(i) for i in range(1, 10)), *('LPT'+str(i) for i in range(1, 10))}):
+        raise ValueError('Team name cannot be used as a safe filename')
+    return team_name
+
+
+def report(variant, team_name=None):
     description = {'baseline': 'the original decoder without event rewards',
                    'event2': 'directional event rewards with strength 2',
                    'event4': 'directional event rewards with strength 4'}[variant]
     text = (ROOT/'solution/docs/TECHNICAL_REPORT_TEMPLATE.md').read_text(encoding='utf-8')
-    values = {'TEAM_NAME': 'Pending registered team name', 'VARIANT': variant,
-              'REPOSITORY_URL': REPOSITORY, 'TEAM_STEM': 'mtah2027-possession',
-              'DRAFT_NOTICE': '**DRAFT: team name pending; no primary variant selected.**',
+    values = {'TEAM_NAME': team_name or 'Pending registered team name', 'VARIANT': variant,
+              'REPOSITORY_URL': REPOSITORY, 'TEAM_STEM': team_stem(team_name),
+              'DRAFT_NOTICE': '**DRAFT: no primary variant selected.**' if team_name else '**DRAFT: team name pending; no primary variant selected.**',
               'VARIANT_DESCRIPTION': description}
     for key, value in values.items():
         text = text.replace('{{' + key + '}}', value)
@@ -68,7 +79,8 @@ def zip_bytes(path, files):
             archive.writestr(info, data, compresslevel=9)
 
 
-def build(output):
+def build(output, team_name=None):
+    stem = team_stem(team_name)
     output = output.resolve()
     if not output.is_relative_to(ROOT/'outputs'):
         raise ValueError('Package must stay inside workspace outputs')
@@ -82,7 +94,7 @@ def build(output):
     for name, digest in bundle['manifest']['runtime_sha256'].items():
         if sha(files[name]) != digest:
             raise ValueError('Runtime bytes changed')
-    files['TECHNICAL_REPORT.md'] = b'> This public example describes baseline. All three variants are supported; none is selected.\n\n' + report('baseline')
+    files['TECHNICAL_REPORT.md'] = b'> This public example describes baseline. All three variants are supported; none is selected.\n\n' + report('baseline', team_name)
     files['THIRD_PARTY_NOTICES.md'] = (ROOT/'solution/docs/THIRD_PARTY_NOTICES.md').read_bytes()
     files['DATA_PROVENANCE.md'] = (ROOT/'solution/docs/EXTERNAL_DATA_SOURCES.md').read_bytes()
     dependencies = []
@@ -113,8 +125,8 @@ python solution/predict.py --bundle models/possession-v1 --challenge --variant b
 Set MTAH_DATA_DIR to the separately supplied licensed dataset root. Choose baseline, event2 or event4 explicitly; baseline above is an example. Models are included, so no research caches or retraining are required for inference. Cross-platform bit equality is untested. Only load trusted model payloads.
 
 Read TECHNICAL_REPORT.md, DATA_PROVENANCE.md and THIRD_PARTY_NOTICES.md. The public repository is configured as ''' + REPOSITORY + '''; its visibility has not been verified. Code-only clones need this archive's model directory. No new licence is assigned to project-owned code; upstream licences retain their stated scope.
-''').encode()
-    manifest = {'status': 'draft', 'team_name': None, 'primary_variant': None,
+''').replace('Team name pending.', 'Team: ' + team_name + '.' if team_name else 'Team name pending.').replace('outputs/mtah2027-possession.csv', 'outputs/' + stem + '.csv').encode()
+    manifest = {'status': 'draft', 'team_name': team_name, 'primary_variant': None,
                 'source': 'current working-tree bytes; not a committed clone',
                 'model_sha256': bundle['manifest']['model_sha256'],
                 'files': {name: {'sha256': sha(data), 'bytes': len(data)} for name, data in sorted(files.items())}}
@@ -122,7 +134,7 @@ Read TECHNICAL_REPORT.md, DATA_PROVENANCE.md and THIRD_PARTY_NOTICES.md. The pub
     files['SHA256SUMS.txt'] = ''.join(f'{sha(data)}  {name}\n' for name, data in sorted(files.items())).encode()
     archive = output/'mtah2027-possession-runtime-20261101.zip'
     zip_bytes(archive, files)
-    index = {'status': 'draft', 'team_name': None, 'primary_variant': None,
+    index = {'status': 'draft', 'team_name': team_name, 'primary_variant': None,
              'published': False, 'submitted': False, 'repository_visibility_verified': False,
              'public_archive': {'name': archive.name, 'sha256': sha(archive.read_bytes())}, 'candidates': {}}
     source = ROOT/'outputs/final_verification/run_20261101/clean_source/runs'
@@ -134,18 +146,19 @@ Read TECHNICAL_REPORT.md, DATA_PROVENANCE.md and THIRD_PARTY_NOTICES.md. The pub
             raise ValueError('Candidate provenance failed')
         folder = output/'private_candidates'/variant
         folder.mkdir(parents=True)
-        csv = folder/'mtah2027-possession.csv'
+        csv = folder/(stem + '.csv')
         csv.write_bytes(data)
         official_format_check(csv, games.source_frames())
-        technical = folder/'mtah2027-possession.md'
-        technical.write_bytes(report(variant))
-        record = {'variant': variant, 'team_name': None, 'draft': True,
+        technical = folder/(stem + '.md')
+        technical.write_bytes(report(variant, team_name))
+        record = {'variant': variant, 'team_name': team_name, 'draft': True,
+                  'csv_filename': csv.name, 'report_filename': technical.name,
                   'prediction_sha256': sha(data), 'report_sha256': sha(technical.read_bytes()),
                   'format_passed': True, 'reference_arrays_read': False, 'scored': False}
         (folder/'candidate_manifest.json').write_bytes(encoded(record))
         index['candidates'][variant] = record
     (output/'PACKAGE_INDEX.json').write_bytes(encoded(index))
-    (output/'HANDOFF.md').write_text('''# Draft delivery handoff
+    (output/'HANDOFF.md').write_text(('''# Draft delivery handoff
 
 The team name is deliberately pending and all three candidates are preserved, as requested. Filenames use the temporary project slug. No primary is selected, and nothing has been published or submitted.
 
@@ -155,11 +168,18 @@ The team name is deliberately pending and all three candidates are preserved, as
 - The final verification tests inference using supplied fitted weights. It does not claim a fresh raw-data-to-model retraining run or challenge accuracy. Baseline performs better on the alternate longer-possession convention; event4 leads the provider-label benchmark. This remains a selection tradeoff.
 
 The official instructions request one CSV, a reproducible public code repository and a short PDF or Markdown report: [submission instructions](https://github.com/metrica-sports/more-than-a-hack-2027/blob/main/SUBMISSION.md). Review the [current rules](https://github.com/metrica-sports/more-than-a-hack-2027/blob/main/RULES.md) and signed registration terms before the final user submission. Instructions checked 1 November 2026.
-''', encoding='utf-8')
+''').replace('The team name is deliberately pending and all three candidates are preserved, as requested. Filenames use the temporary project slug.',
+            'The registered team name is ' + team_name + '. All three candidates are preserved; filenames are ' + stem + '.csv and ' + stem + '.md.' if team_name else
+            'The team name is deliberately pending and all three candidates are preserved, as requested. Filenames use the temporary project slug.').replace(
+            'recover the registered team name, choose one variant, rename its CSV/report to that name, and update the report team field.',
+            'choose one variant; its CSV/report already use the registered team name.' if team_name else
+            'recover the registered team name, choose one variant, rename its CSV/report to that name, and update the report team field.'), encoding='utf-8')
     print('Draft package built; all three candidates preserved; nothing published.')
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, required=True)
-    build(parser.parse_args().output)
+    parser.add_argument('--team-name')
+    args = parser.parse_args()
+    build(args.output, args.team_name)

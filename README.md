@@ -14,7 +14,7 @@ End-to-end inference is runnable with a final all-seven external model bundle an
 & '.\.venv\Scripts\python.exe' solution/predict.py --bundle models/possession-v1 --input data/external/sportec/J03WN1/prepared/inputs.npz --variant event4 --output outputs/my_prediction.csv
 ```
 
-Use `baseline`, `event2` or `event4`; see `solution/docs/INFERENCE.md` for inputs and model provenance, and `solution/docs/FINAL_VERIFICATION.md` for acceptance checks/limits. The local model bundle is ignored by Git and must be supplied separately or rebuilt on another machine. The draft submission package is complete: public runtime/model ZIP and three separate private CSV/report candidates, with exact isolated reproduction verified. All 103 tests pass. Team name and primary variant are deferred at the user's request. See `solution/docs/DELIVERY.md` for the handoff. No competition quality score, automatic variant choice, publication or submission is claimed.
+Use `baseline`, `event2` or `event4`; see `solution/docs/INFERENCE.md` for inputs and model provenance, and `solution/docs/FINAL_VERIFICATION.md` for acceptance checks/limits. The local model bundle is ignored by Git and must be supplied separately or rebuilt on another machine. The draft submission package is complete: public runtime/model ZIP and three separate private CSV/report candidates, with exact isolated reproduction verified. All 103 tests pass. The registered team name is AOM; primary variant selection remains deferred. See `solution/docs/DELIVERY.md` for the handoff. No competition quality score, automatic variant choice, publication or submission is claimed.
 
 ## Project layout
 

@@ -1,5 +1,9 @@
 # Project decisions
 
+## Team name confirmed — 1 November 2026
+
+The user confirmed the registered team name as **AOM**, superseding the earlier deferral. Rebuilt the package at `outputs/submission/AOM_20261101/` with AOM in reports/manifests and `AOM.csv` / `AOM.md` filenames in every private variant folder. All three variants remain; no primary is selected. Earlier unnamed drafts are historical. No publication or submission is authorized by this name update.
+
 ## Draft delivery — 1 November 2026
 
 The user explicitly requested leaving the forgotten registered team name pending and preserving all three variants for later selection. Use temporary project-slug filenames; do not invent a registered name or infer a primary from one reference convention. Prepared a public runtime/model ZIP and separate private CSV/report folders. Strict allowlist/checksum audits and fresh-environment extracted-runtime inference reproduce all candidates exactly without reference labels or scoring. All 103 tests pass. Public repository visibility/member registration/signed terms remain unconfirmed. This completes local implementation/draft delivery, not publication or actual submission. See `DELIVERY.md` for exact scope and final user actions. No commit, push, upload or submission was made.
