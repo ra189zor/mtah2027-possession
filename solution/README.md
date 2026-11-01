@@ -1,6 +1,6 @@
 # More Than A Hack 2027 solution workspace
 
-Status: Algorithm development, end-to-end inference and final verification are complete. Stronger event rewards improve recorded moderate provider spellF1 from 0.4916 to 0.5046 and count passes from 2/7 to 4/7, with zero playing-period X. Alternate-label regressions remain, so variant choice is explicit. All 98 tests pass in the existing and fresh environments. Only submission/technical-document packaging remains.
+Status: Algorithm development, end-to-end inference, final verification and draft submission packaging are complete. Stronger event rewards improve recorded moderate provider spellF1 from 0.4916 to 0.5046 and count passes from 2/7 to 4/7, with zero playing-period X. Alternate-label regressions remain, so variant choice is explicit. All 103 tests pass; the earlier 98 runtime/research tests also passed in the fresh environment. The public runtime archive reproduces all three private candidates exactly. Team name and primary variant remain deferred at the user's request. See `docs/DELIVERY.md`; nothing has been published or submitted.
 
 See `docs/SWITCH_EVENTS.md` for current results, cross-fitting, audits and commands. `docs/NESTED_VALIDATION.md` records the original broader benchmark; `docs/SHORT_POSSESSIONS.md` retains the earlier control/sampling tradeoffs and negative results. No competition performance or submission readiness is claimed.
 

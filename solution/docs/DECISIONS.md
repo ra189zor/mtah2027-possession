@@ -1,5 +1,9 @@
 # Project decisions
 
+## Draft delivery — 1 November 2026
+
+The user explicitly requested leaving the forgotten registered team name pending and preserving all three variants for later selection. Use temporary project-slug filenames; do not invent a registered name or infer a primary from one reference convention. Prepared a public runtime/model ZIP and separate private CSV/report folders. Strict allowlist/checksum audits and fresh-environment extracted-runtime inference reproduce all candidates exactly without reference labels or scoring. All 103 tests pass. Public repository visibility/member registration/signed terms remain unconfirmed. This completes local implementation/draft delivery, not publication or actual submission. See `DELIVERY.md` for exact scope and final user actions. No commit, push, upload or submission was made.
+
 ## Step 1 authorization
 
 The user approved Step 1 and authorized the agent to execute commands and install dependencies on 21 October 2026. The existing project-root `.venv` is reused. Step 1 initially created a local repository inside `solution/`; the subsequent Step 2 instruction supersedes that layout: use one root `.gitignore` and leave commits/pushes to the user. Previous local checkpoint metadata is preserved in ignored `.local-git/solution.git`.

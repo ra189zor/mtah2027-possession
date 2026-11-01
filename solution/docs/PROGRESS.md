@@ -189,9 +189,9 @@ Commands, provenance and exact verification limits: `INFERENCE.md`.
 
 Details, exact scope and reproduction: `FINAL_VERIFICATION.md`.
 
-## Remaining — submission and technical-document package
+## Completed — draft submission and technical-document package
 
-Prepare the final technical/submission deliverables with code/runtime dependency/model provenance, known limitations, variant choices and exact artifact checks. The runner and final verification now exist. Preserve the original and both event variants explicitly; count/boundary failures and label sensitivity remain quality limitations, and no training-match or input-only challenge smoke result should be described as accuracy evidence. Publication/submission is not performed automatically.
+Prepared the technical/submission deliverables with code/runtime dependency/model provenance, known limitations, all three variant choices and exact artifact checks. A strict public runtime/model ZIP excludes match assets and predictions; private candidate folders hold unchanged CSVs and matching Markdown reports. Fresh-environment inference from the extracted ZIP reproduces each candidate byte for byte, with standalone format acceptance and no reference/scoring access. All 103 tests pass. The user explicitly deferred the registered team name and requested all variants remain available for later selection; temporary project-slug names are clearly marked draft. See `DELIVERY.md` and local `outputs/submission/package_20261101/HANDOFF.md`. No commit, push, publication or submission was performed. Count/boundary failures and label sensitivity remain quality limitations; input-only smoke acceptance is not accuracy evidence.
 
 The user's subsequent improvement requests added the completed experiments above before packaging. The switch-event objective now has measured provider-label gains, but the semantic tradeoff still needs independent controlled-possession evidence before declaring a universal default. Keep both fixed event variants and the original reference explicit; do not increase predicted counts merely to pass the diagnostic heuristic or select the more favorable reference convention.
 

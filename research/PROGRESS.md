@@ -1,5 +1,7 @@
 # Current project status
 
+1 November, draft delivery: Prepared a strict public runtime/model archive, dependency/data attribution and technical Markdown reports, keeping all three private CSV candidates separate. The extracted runtime in the fresh environment reproduces each candidate byte for byte, passes the standalone format checker and records no forbidden reference/research access or scoring. All 103 tests pass. Team name and primary variant are explicitly deferred by the user; temporary filenames remain draft. Detailed handoff: `solution/docs/DELIVERY.md`. No challenge statistics, hidden-accuracy claim, new model fit, commit, push, upload or submission.
+
 21 October 2026: Step 1 was approved and completed. The initial research report is retained as the assessment snapshot; its historical statement that Step 1 awaits approval is superseded by this progress record.
 
 The existing project-root `.venv` now has the required packages installed. The `solution/` directory contains the code-only Git repository, dependency lock, decisions and detailed progress. Official baseline validation and evaluation passed from that virtual environment. Results are in `research/step1_evaluation/`.
