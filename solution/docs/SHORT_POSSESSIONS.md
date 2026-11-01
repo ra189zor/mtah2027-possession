@@ -1,5 +1,7 @@
 # Short-possession recovery
 
+Historical checkpoint: the subsequent learned switch-event experiment is complete in `SWITCH_EVENTS.md` (1 November). Its provider-label score/count gains and alternate-label regressions extend the findings below; references here to an unimplemented event learner describe this earlier checkpoint.
+
 Completed 30 October 2026 after the seven-match count failures. Two targeted experiments are complete and audited. A count-balanced control boost raises moderate provider-label count passes from 2/7 to 3/7, with slightly lower mean spellF1. Boundary-aware training does not improve the original provider-label objective. Neither is promoted as an unconditional replacement; the original decoder/heads remain the preferred provider-score reference. These are adaptive experiments on opened external data, not an independent new test.
 
 ## Diagnosis

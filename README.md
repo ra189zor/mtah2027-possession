@@ -4,9 +4,9 @@ Football possession segmentation from noisy tracking data and tactical events fo
 
 ## Current status
 
-Steps 1–6, learned evidence, gap-aware ownership, temporal decoding and seven-match nested external validation are complete. Across seven outer folds, mean spellF1 is 0.4916 under moderate noise and 0.4718 with contextual dropout, ghost balls and wrong-team tracks. The decoder beats gap composition on every match, with zero playing-period X, but provider-label count targets pass on only two of seven moderate fixture averages. See `solution/docs/NESTED_VALIDATION.md` for both label conventions, limits and reproduction. End-to-end learned inference packaging remains pending; previous systems are preserved.
+Steps 1–6, learned evidence, gap-aware ownership, temporal decoding, seven-match external validation and learned switch-event experiments are complete. The stronger fixed event reward improves mean moderate provider-label spellF1 from 0.4916 to 0.5046 and count passes from 2/7 to 4/7. Contextual-noise spellF1 improves from 0.4718 to 0.4837. All predictions have zero playing-period X; all 90 tests and the cross-fitting/repetition audit pass.
 
-A subsequent short-possession investigation tested lower switch costs, tracking-only control evidence and boundary-aware training. A count-balanced option raises moderate count passes to 3/7 with slightly lower spellF1; no unconditional replacement is promoted. The preferred provider-score reference remains unchanged. See `solution/docs/SHORT_POSSESSIONS.md` for the complete positive/negative results and label-convention tradeoffs.
+The event variants regress under absorbed-short-spell references, so they and the original remain explicit research choices rather than a universal default. False switches and three moderate count failures remain. Current methods, both label conventions, limitations and commands are in `solution/docs/SWITCH_EVENTS.md`; earlier validation and rejected/tradeoff experiments are in `NESTED_VALIDATION.md` and `SHORT_POSSESSIONS.md` under the same docs folder. End-to-end inference packaging remains pending; no competition result or submission readiness is claimed.
 
 ## Project layout
 

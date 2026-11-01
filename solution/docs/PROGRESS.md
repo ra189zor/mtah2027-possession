@@ -152,11 +152,23 @@ Details, full limitations and commands: `NESTED_VALIDATION.md`.
 
 Full results and reproduction: `SHORT_POSSESSIONS.md`.
 
-## Remaining — end-to-end packaging and ownership research
+## Learned switch-event model — complete, 1 November 2026
+
+- Added a three-class no-switch/to-home/to-away model with 114 label-free physical and probability-context features. Event targets/sampling remain separate from feature extraction.
+- Trained seven event models on six fixtures each. All 294 upstream training probability cases come from five-match heads excluding both the outer fixture and that training fixture; contextual noise and alternate labels remain evaluation-only.
+- Added an exact event-aware Viterbi decoder with directed switch rewards, a finite negative-cost floor and a same-frame round-trip guard. Original emissions, stop/restart costs, heads, sources and probabilities are unchanged.
+- Evaluated two prespecified reward strengths over 70 external cases and both label conventions (420 rows), without outer-score strength selection. Reward 4 improves moderate provider spellF1 0.4916 → 0.5046 and count passes 2/7 → 4/7. Contextual provider spellF1 improves 0.4718 → 0.4837. Some false switches and three moderate count failures remain.
+- Stronger rewards regress alternate-label moderate spellF1 0.5509 → 0.5250 and count passes 6/7 → 1/7. This is a provider-convention improvement, not an unconditional production default or competition score.
+- All 90 tests pass. Independent audit verifies 651 hashes, 294 cross-fitting traces, seven exact held-out probability probes, 140 unchanged comparator rows, 140 repeated/validated CSVs and 70 native zero-reward equivalence cases.
+- No new package/download, competition-data inference/evaluation, final all-seven deployment model, commit, push or submission.
+
+Details and reproduction: `SWITCH_EVENTS.md`.
+
+## Remaining — end-to-end packaging and convention validation
 
 Package a frozen learned pipeline and reproducible single-command inference with dependency/model provenance, exact output validation and no reference-label dependency. Preserve the previous fixed decoder as a reference: nested selection did not establish a useful replacement. Count/boundary failures and label sensitivity remain explicit quality limitations; do not silently retune on opened outer results.
 
-The user's subsequent improvement request added the completed experiments above before packaging. A learned switch-event/boundary objective is a possible next research hypothesis, not an implemented or validated improvement. Do not increase predicted counts merely to pass the diagnostic heuristic or select the more favorable reference convention.
+The user's subsequent improvement requests added the completed experiments above before packaging. The switch-event objective now has measured provider-label gains, but the semantic tradeoff still needs independent controlled-possession evidence before declaring a universal default. Keep both fixed event variants and the original reference explicit; do not increase predicted counts merely to pass the diagnostic heuristic or select the more favorable reference convention.
 
 ## Outstanding administrative information
 
