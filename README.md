@@ -4,6 +4,12 @@ Football possession segmentation from noisy tracking data and tactical events fo
 
 ## Current status
 
+Latest research implements tracking reliability, missing-ball ownership and boundary specialists, evaluated across seven external matches, three noisy seeds and four label conventions. The corrected combined candidate raises provider spellF1 from event4's 0.6205 to 0.6312 clean and 0.5046 to 0.5159 under moderate noise. All seven moderate fixtures improve; count coverage remains 4/7. The original baseline still leads under some longer-possession conventions. All 108 tests pass in both environments; independent source/exclusion and exact inference replays pass.
+
+The new candidate is runnable through `solution/research_predict.py` with separate corrected research weights. See `solution/docs/RESEARCH_INFERENCE.md` for commands and `solution/docs/RELIABILITY_RESULTS.md` for full results and limitations. This is repeated external research, not an independent new-dataset or competition score. The original AOM archive remains preserved; no submission variant has been selected automatically.
+
+## Original verified package (preserved)
+
 Steps 1–6, learned evidence, gap-aware ownership, temporal decoding, seven-match external validation and learned switch-event experiments are complete. The stronger fixed event reward improves mean moderate provider-label spellF1 from 0.4916 to 0.5046 and count passes from 2/7 to 4/7. Contextual-noise spellF1 improves from 0.4718 to 0.4837. All predictions have zero playing-period X; all 90 tests and the cross-fitting/repetition audit pass.
 
 The event variants regress under absorbed-short-spell references, so they and the original remain explicit choices rather than a universal default. False switches and three moderate count failures remain. Methods and label-convention results are in `solution/docs/SWITCH_EVENTS.md`.

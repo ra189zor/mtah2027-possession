@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "training_ghost_seeds": [811, 823],
+  "training_ghost_interval_s": 30,
+  "training_ghost_duration_s": [0.2, 3.0],
+  "training_ghost_offset_m": [4, 24],
+  "quality_model": {"max_iter": 80, "max_leaf_nodes": 15, "learning_rate": 0.08, "min_samples_leaf": 60, "l2_regularization": 1, "early_stopping": false, "random_state": 811},
+  "gap_model": {"max_iter": 120, "max_leaf_nodes": 15, "learning_rate": 0.06, "min_samples_leaf": 60, "l2_regularization": 2, "early_stopping": false, "random_state": 811},
+  "boundary_model": {"max_iter": 120, "max_leaf_nodes": 15, "learning_rate": 0.06, "min_samples_leaf": 60, "l2_regularization": 2, "early_stopping": false, "random_state": 811},
+  "blend": 0.5,
+  "label_sensitivity_seconds": [1, 3, 5],
+  "workers": 2,
+  "threads": 2,
+  "bootstrap_draws": 1000,
+  "protocol": "Fixed adaptive research ablations, no hyperparameter search. Seven outer match exclusions. New quality training uses separately seeded synthetic offset/frozen ghosts, never possession references. Training features for gap/boundary heads use upstream and quality models excluding both outer and training fixture. Gap head learns from missing-ball alive rows only, weighted by sampled possession. New boundary head uses original class-prior-restoring sampler. Compare frozen event4, baseline, quality-only, gap-only, boundary-only and combined. Original clean/moderate/severe/contextual inputs and three noisy seeds remain identical. Contextual ghost labels only evaluate quality; do not train on the contextual stress cases. Report provider and evaluation-only 1/3/5-second absorbed references. No competition data, no automatic production promotion. Prior researcher adaptation and overlapping training sets limit inferential claims."
+}

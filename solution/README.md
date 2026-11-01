@@ -1,5 +1,7 @@
 # More Than A Hack 2027 solution workspace
 
+Latest research: the corrected reliability/gap/boundary candidate is implemented and runnable. Seven-match moderate provider spellF1 rises from 0.5046 to 0.5159, with improvement on all seven fixtures. All 108 tests pass in both environments; the corrected research runtime reproduces held-out outputs exactly. See `docs/RELIABILITY_RESULTS.md` and `docs/RESEARCH_INFERENCE.md`. The following delivery notes describe the preserved original AOM package; the new research candidate is a separate explicit choice.
+
 Status: Algorithm development, end-to-end inference, final verification and draft submission packaging are complete. Stronger event rewards improve recorded moderate provider spellF1 from 0.4916 to 0.5046 and count passes from 2/7 to 4/7, with zero playing-period X. Alternate-label regressions remain, so variant choice is explicit. All 103 tests pass; the earlier 98 runtime/research tests also passed in the fresh environment. The public runtime archive reproduces all three private candidates exactly. The registered team name is AOM; primary variant selection remains deferred. See `docs/DELIVERY.md`; nothing has been published or submitted.
 
 See `docs/SWITCH_EVENTS.md` for current results, cross-fitting, audits and commands. `docs/NESTED_VALIDATION.md` records the original broader benchmark; `docs/SHORT_POSSESSIONS.md` retains the earlier control/sampling tradeoffs and negative results. No competition performance or submission readiness is claimed.

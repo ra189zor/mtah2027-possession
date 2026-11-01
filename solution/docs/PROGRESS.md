@@ -1,5 +1,15 @@
 # Execution progress
 
+## Completed — reliability, gaps, boundaries and broader validation, 1 November 2026
+
+Implemented all four requested research directions, with separate quality-only, gap-only, boundary-only and combined ablations against baseline/event4. Evaluated 70 external inputs across seven held-out fixtures and four reference conventions. The initial quality detector's clean false alarms prompted a recorded clean-domain follow-up, then a complete specialist refit using pair-excluded corrected quality predictions. No new independent real matches were added; all estimates remain adaptive research on the existing seven fixtures.
+
+Corrected combined provider spellF1 is 0.63119 clean / 0.51590 moderate / 0.44617 severe / 0.49190 contextual. Moderate improvement over event4 is +0.01131, with descriptive match-bootstrap interval [+0.00768,+0.01541] and seven improved fixtures. Missing-alive moderate accuracy rises from 0.73558 to 0.74677; spurious direct switches decrease from 176.00 to 164.38. Moderate count passes remain 4/7. The corrected quality detector's clean false-positive rate is 0.00508, versus 0.45420 initially; contextual synthetic-ghost average precision is 0.81947. The baseline remains stronger under some absorbed-spell conventions, so no universal default is declared.
+
+All 108 tests pass in existing and fresh environments. Corrected experiment audit passes 601 hashes, 294 cross-fitting traces and 84 exact prediction replays. The quality-only follow-up passes 70 prediction hashes and 14 replays. The corrected runtime passes six exact held-out CLI comparisons plus three all-missing checks in the fresh environment under read guards. The verifier initially blocked its own fresh-environment dependencies under `outputs`; its allowlist was corrected to permit the active interpreter environment while retaining reference/research restrictions, and the run was repeated successfully in a new directory.
+
+Fitted all-seven corrected research heads and retained a separate held-out verification bundle. Original model/code/archive are preserved. New entry point: `solution/research_predict.py`; corrected bundle: `models/research-specialists-clean`. See `RESEARCH_INFERENCE.md`, `RELIABILITY_RESEARCH.md` and `RELIABILITY_RESULTS.md`. Benchmark decoding retains prior per-fold inner selections; the final experimental bundle retains the earlier global 40/40/8 profile. No competition inference/scoring, new dependencies, commit, push, upload or submission occurred in this cycle. Registered team is AOM; primary submission choice remains pending.
+
 ## Step 1 — complete, 21 October 2026
 
 - Reused the user's existing project-root `.venv` (Python 3.11.9).

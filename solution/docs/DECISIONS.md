@@ -1,5 +1,9 @@
 # Project decisions
 
+## Four-direction accuracy work — 1 November 2026
+
+The user explicitly requested tracking reliability, missing-ball learning, better boundaries and broader external validation. Complete fixed ablations rather than claim an untested architecture is best. Record the first detector's clean false-alarm failure, the clean-domain correction and the full corrected joint refit separately. Preserve original references and report four conventions; no label convention or decoder profile is selected to flatter new outer scores. The corrected combined candidate improves provider interval scores but does not settle the longer-possession semantic tradeoff. Keep the existing AOM archive and original variants, plus separate runnable research candidates. Team name AOM is confirmed; primary submission selection remains pending. No automatic publication/submission. See `RELIABILITY_RESULTS.md` and `RESEARCH_INFERENCE.md`.
+
 ## Team name confirmed — 1 November 2026
 
 The user confirmed the registered team name as **AOM**, superseding the earlier deferral. Rebuilt the package at `outputs/submission/AOM_20261101/` with AOM in reports/manifests and `AOM.csv` / `AOM.md` filenames in every private variant folder. All three variants remain; no primary is selected. Earlier unnamed drafts are historical. No publication or submission is authorized by this name update.
