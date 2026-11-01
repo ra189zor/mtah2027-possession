@@ -41,15 +41,18 @@ def runtime_hashes():return {name:file_digest(ROOT/name) for name in RUNTIME_SOU
 
 
 def validate_tracking(inputs):
-    check_inputs(inputs)
+    try:check_inputs(inputs)
+    except (TypeError,OverflowError,IndexError) as error:raise ValueError('Invalid tracking field type or shape') from error
     n=len(inputs['period'])
     if n<1 or not (inputs['period']>0).any():raise ValueError('Input needs at least one published playing-period frame')
-    if np.asarray(inputs['fps']).shape!=() or not np.isfinite(inputs['fps']) or inputs['fps']!=25:raise ValueError('Expected scalar 25 Hz fps')
+    real=lambda x:np.issubdtype(x.dtype,np.floating) or np.issubdtype(x.dtype,np.integer)
+    fps=np.asarray(inputs['fps'])
+    if fps.shape!=() or not real(fps) or not np.isfinite(fps) or fps!=25:raise ValueError('Expected scalar 25 Hz fps')
     pitch=inputs['pitch_m']
-    if pitch.shape!=(2,) or not np.isfinite(pitch).all() or (pitch<=0).any():raise ValueError('Pitch must contain positive length/width in metres')
+    if pitch.shape!=(2,) or not real(pitch) or not np.isfinite(pitch).all() or (pitch<=0).any():raise ValueError('Pitch must contain positive real length/width in metres')
     if set(inputs['team_of_slot'].tolist())!={0,1}:raise ValueError('Anonymous slots must include both teams')
     for key in ('players_xy','ball_xy'):
-        if not np.issubdtype(inputs[key].dtype,np.number) or np.isinf(inputs[key]).any():raise ValueError('Coordinates must be numeric metres, with NaN for missing values')
+        if not real(inputs[key]) or np.isinf(inputs[key]).any():raise ValueError('Coordinates must be real numeric metres, with NaN for missing values')
     blocks=period_blocks(inputs['period']);ids=[int(inputs['period'][a]) for a,b in blocks]
     if ids!=sorted(set(ids)):raise ValueError('Each half must form one ordered published block; missing tracking stays NaN inside a half')
 

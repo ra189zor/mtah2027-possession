@@ -8,13 +8,13 @@ Steps 1–6, learned evidence, gap-aware ownership, temporal decoding, seven-mat
 
 The event variants regress under absorbed-short-spell references, so they and the original remain explicit choices rather than a universal default. False switches and three moderate count failures remain. Methods and label-convention results are in `solution/docs/SWITCH_EVENTS.md`.
 
-End-to-end inference is now runnable with a final all-seven external model bundle and an explicit variant. All 95 tests pass; nine guarded held-out raw-input runs reproduce earlier CSVs exactly. From the project root:
+End-to-end inference is runnable with a final all-seven external model bundle and an explicit variant. Final verification passes all 98 tests, fresh-environment external reproduction, failure handling and unscored local challenge-input format/repeatability checks. From the project root:
 
 ```powershell
 & '.\.venv\Scripts\python.exe' solution/predict.py --bundle models/possession-v1 --input data/external/sportec/J03WN1/prepared/inputs.npz --variant event4 --output outputs/my_prediction.csv
 ```
 
-Use `baseline`, `event2` or `event4`; see `solution/docs/INFERENCE.md` for inputs, the challenge adapter, model provenance, guard/repeatability results and limitations. The local model bundle is ignored by Git and must be supplied separately or rebuilt on another machine. Final verification and submission packaging remain pending; no competition quality score or submission readiness is claimed.
+Use `baseline`, `event2` or `event4`; see `solution/docs/INFERENCE.md` for inputs and model provenance, and `solution/docs/FINAL_VERIFICATION.md` for acceptance checks/limits. The local model bundle is ignored by Git and must be supplied separately or rebuilt on another machine. Only the submission/technical-document package remains. No competition quality score, automatic variant choice or actual submission is claimed.
 
 ## Project layout
 

@@ -51,6 +51,13 @@ class InferenceTests(unittest.TestCase):
         bad=inputs['ball_xy'].copy();bad[1,0]=np.inf
         with self.assertRaises(ValueError):validate_tracking(inputs|{'ball_xy':bad})
 
+    def test_complex_coordinates_and_non_scalar_fps_fail_safely(self):
+        inputs=self.inputs()
+        for key in ('players_xy','ball_xy','pitch_m'):
+            with self.assertRaises(ValueError):validate_tracking(inputs|{key:inputs[key].astype(np.complex64)})
+        with self.assertRaises(ValueError):validate_tracking(inputs|{'fps':np.array([25,25])})
+        with self.assertRaises(ValueError):validate_tracking(inputs|{'fps':np.array('25')})
+
     def test_corrupt_weights_rejected_before_deserialization(self):
         (self.folder/'models.joblib').write_bytes(b'not a model')
         manifest=self.manifest('0'*64,{})
@@ -83,6 +90,24 @@ class InferenceTests(unittest.TestCase):
         self.assertEqual(file_digest(path),before)
         with self.assertRaises(ValueError):validate_prediction(np.array(['H','D','A']),period)
         with self.assertRaises(ValueError):validate_prediction(np.array(['X','X','A']),period)
+
+    def test_format_failure_preserves_previous_files_and_cleans_staging(self):
+        folder=self.folder/'bundle';folder.mkdir();(folder/'manifest.json').write_text('{}')
+        bundle={'folder':folder,'manifest':{'kind':'test','model_sha256':'example','training_matches':[]}}
+        period=np.array([1,0,2]);result={'labels':np.array(['H','X','A']),'input_fingerprint':'input','timing':{}}
+        path=self.folder/'prediction.csv';write_prediction(path,result,bundle,'baseline',{},period)
+        before=path.read_bytes(),path.with_suffix('.run.json').read_bytes()
+        with patch('possession.inference.official_format_check',side_effect=ValueError('injected format failure')):
+            with self.assertRaisesRegex(ValueError,'injected'):write_prediction(path,result,bundle,'baseline',{},period,overwrite=True)
+        self.assertEqual(before,(path.read_bytes(),path.with_suffix('.run.json').read_bytes()))
+        self.assertFalse(list(self.folder.glob('*.tmp')))
+
+    def test_dependency_mismatch_rejected_before_model_load(self):
+        (self.folder/'models.joblib').write_bytes(b'model')
+        manifest=self.manifest(file_digest(self.folder/'models.joblib'),{})
+        manifest['packages']['numpy']='0.0.0';(self.folder/'manifest.json').write_text(json.dumps(manifest))
+        with patch('possession.inference.joblib.load',side_effect=AssertionError('must not load')):
+            with self.assertRaisesRegex(ValueError,'numpy'):load_bundle(self.folder)
 
 
 if __name__=='__main__':unittest.main()

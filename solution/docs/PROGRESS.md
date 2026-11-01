@@ -176,9 +176,22 @@ Details and reproduction: `SWITCH_EVENTS.md`.
 
 Commands, provenance and exact verification limits: `INFERENCE.md`.
 
-## Remaining — final verification, then submission package
+## Final verification — complete, 1 November 2026
 
-Broaden final verification and clean reproduction/distribution checks, then finish the technical/submission package. The single-command runner and local model bundle now exist. Preserve the original and both event variants explicitly; count/boundary failures and label sensitivity remain quality limitations, and no final all-seven training-match smoke score should be reported as held-out performance.
+- Created a fresh isolated Python environment and installed all 12 locked dependencies offline from hash-recorded cached wheels. No system/user-site package inheritance; dependency checking passes.
+- Verified a minimal current-candidate source snapshot with only runtime/validator/licence/requirements and two-file model bundles, from an unrelated working directory. This is a clean-source working-tree copy, not a committed Git clone or raw-to-model retraining claim.
+- Found/fixed acceptance of complex-valued tracking/pitch and malformed FPS. Added regression/staging/version tests. All 98 tests pass in both environments. Learned weights/settings and AST logic outside input validation remain unchanged; old manifests/runtime source are archived and new manifests record revision 2.
+- All 12 external raw-input CSVs reproduce frozen held-out predictions byte for byte across all variants and clean/moderate/severe/contextual conditions. Extreme missingness, repeatability, 12 rejection cases and access-guard self-tests pass.
+- Full local challenge-input inference passes the standalone format checker and repeats exactly for every variant. Only tactical metadata/raw tracking are read; no reference labels or scoring. No competition match statistics or quality/resource numbers are reported.
+- External worker measurements are 22.08–23.80 s wall time and 761.1–765.8 MiB peak working set on this host, within the declared engineering test budget. Cross-platform/hardware equivalence is not claimed.
+- Added a root LF checkout policy for byte-stable runtime source hashes; the single root ignore policy and original learned-feature/decoder sources remain unchanged. Independent artifact/AST/environment/contract audit passes.
+- No new package versions/downloads, model refit, commit, push, publication or submission.
+
+Details, exact scope and reproduction: `FINAL_VERIFICATION.md`.
+
+## Remaining — submission and technical-document package
+
+Prepare the final technical/submission deliverables with code/runtime dependency/model provenance, known limitations, variant choices and exact artifact checks. The runner and final verification now exist. Preserve the original and both event variants explicitly; count/boundary failures and label sensitivity remain quality limitations, and no training-match or input-only challenge smoke result should be described as accuracy evidence. Publication/submission is not performed automatically.
 
 The user's subsequent improvement requests added the completed experiments above before packaging. The switch-event objective now has measured provider-label gains, but the semantic tradeoff still needs independent controlled-possession evidence before declaring a universal default. Keep both fixed event variants and the original reference explicit; do not increase predicted counts merely to pass the diagnostic heuristic or select the more favorable reference convention.
 

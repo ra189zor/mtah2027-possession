@@ -1,0 +1,8 @@
+# Frozen runtime/model provenance uses byte hashes; keep source bytes stable on checkout.
+*.py text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*requirements*.txt text eol=lf
+*.joblib binary
+*.npz binary
+*.npy binary

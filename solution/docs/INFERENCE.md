@@ -1,5 +1,7 @@
 # One-command learned inference
 
+The subsequent final-verification checkpoint is complete in `FINAL_VERIFICATION.md`. It adds fresh-environment clean-source and local challenge-input acceptance tests, and fixes a real-input type guard without changing model weights/settings. Current manifests are runtime revision 2; the packaging checks below are the historical first revision.
+
 Completed 1 November 2026, including final all-seven external fitting and guarded raw-input verification. The pipeline loads a model bundle, extracts tracking features, predicts ownership/dead/event evidence, decodes H/A/D/X and writes an officially format-validated CSV. It does not import research runners, load targets or calculate quality scores. All 95 tests pass; nine held-out raw-input runs reproduce earlier prediction CSVs byte for byte.
 
 This is end-to-end from supplied tracking to prediction CSV. It is not a graphical application or a raw-video ball/player detector. Video and Smart Tagging are not consumed by this learned pipeline; the external training fixtures did not validate an equivalent tag branch.
@@ -32,7 +34,7 @@ The CLI also has an input-only tactical adapter:
 & '.\.venv\Scripts\python.exe' solution/predict.py --bundle models/possession-v1 --challenge --variant baseline --output outputs/submission_candidate.csv --quiet
 ```
 
-This uses the provided `games.py` metadata/path/half tables and the existing verified raw-tracking parser. Its output timeline follows the supplied tactical source contract. The adapter opens local metadata and raw tracking only; it does not open reference possession files, video, Smart Tagging or score the candidate. `MTAH_DATA_DIR`, when set, controls the provided asset paths. Full competition-input inference is deferred to final verification; it has not been executed in this packaging checkpoint. No competition-data numbers are reported here.
+This uses the provided `games.py` metadata/path/half tables and the existing verified raw-tracking parser. Its output timeline follows the supplied tactical source contract. The adapter opens local metadata and raw tracking only; it does not open reference possession files, video, Smart Tagging or score the candidate. `MTAH_DATA_DIR`, when set, controls the provided asset paths. Full input-only inference subsequently passed the final-verification format and repeatability checks; no competition accuracy/possession numbers were reported. See `FINAL_VERIFICATION.md`.
 
 ## Tracking-only NPZ contract
 
