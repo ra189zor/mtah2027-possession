@@ -1,5 +1,11 @@
 # Project decisions
 
+## Explicit public correctness evaluation — 1 November 2026
+
+The user's subsequent comparison request also authorized scoring the frozen older baseline/event2/event4 predictions on the same public window. Results are in `outputs/public_correctness/model_comparison_20261101/`. The tiny observed public-window differences do not establish a full-match winner; no model/settings or registered submission choice were changed from these results.
+
+The user requested measuring the new model on the official public five-minute reference. This is a scoped exception to the earlier external-results-only reporting instruction. Scored the existing `outputs/AOM_research_combined.csv` after verifying its frozen prediction/model hashes, using the supplied evaluator and 1,000 bootstrap draws. Kept the evaluation in `outputs/public_correctness/research_combined_20261101/`; no model, threshold, decoder setting, variant selection or output correction followed from these labels. Full private-match references remain unavailable and were not accessed. This is a correctness check, not training/tuning or a full-match accuracy claim.
+
 ## Four-direction accuracy work — 1 November 2026
 
 The user explicitly requested tracking reliability, missing-ball learning, better boundaries and broader external validation. Complete fixed ablations rather than claim an untested architecture is best. Record the first detector's clean false-alarm failure, the clean-domain correction and the full corrected joint refit separately. Preserve original references and report four conventions; no label convention or decoder profile is selected to flatter new outer scores. The corrected combined candidate improves provider interval scores but does not settle the longer-possession semantic tradeoff. Keep the existing AOM archive and original variants, plus separate runnable research candidates. Team name AOM is confirmed; primary submission selection remains pending. No automatic publication/submission. See `RELIABILITY_RESULTS.md` and `RESEARCH_INFERENCE.md`.
