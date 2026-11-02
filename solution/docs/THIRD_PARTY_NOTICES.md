@@ -10,6 +10,8 @@ Credit Deutsche Fußball Liga (DFL), Sportec Solutions and Bassek et al. (2025),
 
 Our changes include coordinate conversion, anonymous team slots, derived H/A/D/X references from provider codes, separate model-facing input arrays, seeded input-only corruption, feature extraction and fitted models. Raw downloads, label arrays and frame-level external predictions are not included in the public runtime archive. Full transformation notes remain in `DATA_PROVENANCE.md` / `solution/docs/EXTERNAL_DATA_SOURCES.md`.
 
+The 2 November external transfer experiment additionally uses [Metrica Sports public sample tracking/events](https://github.com/metrica-sports/sample-data) at revision `e706dd506b360d69d9d123d5b8026e7294b13996`. Credit Metrica Sports. Its README asks public users to acknowledge the source; this project does not assign an additional data licence. The two anonymized sample games and event-derived partial binary references remain local, ignored and excluded from deployment archives. They are not training data for the existing fitted models. See `solution/docs/EXTERNAL_DATA_SOURCES.md`.
+
 ## Python dependencies
 
 Exact versions are in `solution/requirements-lock.txt`. `DEPENDENCIES.json` records installed distribution metadata and licence identifiers/hints for the pinned packages. Dependency wheels/binaries are not redistributed in this runtime archive; installation obtains them separately, with their own licences. The metadata inventory is provenance, not a blanket licence grant for the project or a substitute for individual package notices.

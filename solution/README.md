@@ -64,6 +64,8 @@ Feature extraction runs from the project root with `& '.\.venv\Scripts\python.ex
 
 External validation tooling, the frozen match split and test scenarios are documented in `docs/EXTERNAL_VALIDATION.md`. Public Sportec/DFL source attribution and transformations are recorded in `docs/EXTERNAL_DATA_SOURCES.md`. The actual external downloads, arrays and generated results remain in ignored paths at the project root.
 
+The 2 November stoppage diagnosis, learned stop/restart experiment and two additional public Metrica sample checks are documented in `docs/STOPPAGE_RESEARCH.md`. These research checks preserve the existing deployment bundles; the two added samples supply partial binary references, not complete possession ground truth.
+
 Do not commit restricted data, frame-level predictions, independent validation labels, video clips or reconstructive exports. Signed registration terms govern data use. Hosted LLMs must not receive restricted match materials or extracts. Public model dependencies need licence and provenance review.
 
 The official source snapshot retains its own MIT licence. We have not copied its implementation into this repository. If code is copied later, preserve its attribution and licence.

@@ -218,3 +218,13 @@ Member confirmation, signed terms review and external-benchmark review availabil
 Reviewed the user's friend's recommendations and checked current online rules. Revised the validation policy and schedule; see `VALIDATION_UPDATE_2026-10-28.md`. No annotation work had begun under the old policy. Steps 1–2 remain complete; Step 3 has not started. No packages, external datasets, commits or pushes were added during this plan update.
 
 The later Step 3 completion entry above supersedes this plan update's historical execution status.
+
+## Stoppage diagnosis and boundary experiment — complete, 2 November 2026
+
+- Reproduced all 70 current corrected-combined external predictions and ran explicit evidence/decoder/oracle interventions. Current moderate dead recall is 96.52%; removing stop/restart costs reduces spellF1 from 0.51582 to 0.37746. Ownership/timing remains the larger external interval-score limitation.
+- Downloaded two new public Metrica sample fixtures with pinned source and checksums. The frozen current model achieves 87.01% / 88.79% dead recall on guarded event-derived stoppage interiors. References cover only 38.40% / 44.97% before guarding; this is partial binary validation with substantial missingness/status confounding, not two complete possession benchmarks.
+- Trained seven cross-fitted stop/restart heads and evaluated 280 candidate/comparator/convention rows. Moderate provider spellF1 changes 0.51582 to 0.51658, with a descriptive interval crossing zero; severe scores improve on all seven fixtures. Moderate count passes stay 4/7 and contextual alternate-label performance regresses slightly.
+- Retained the boundary head as an experiment, without promoting or refitting the final AOM submission candidate. All 120 tests pass; audit passes 458 hash checks, 294 upstream exclusion traces and seven exact new/original decoder replay pairs. Original model bundles remain valid and unchanged.
+- No challenge inputs/references were read, packages installed, commits/pushes made or submission uploaded in this checkpoint. TCN, real automatic-tag fusion and targeted video recovery remain pending.
+
+Details and reproduction: `STOPPAGE_RESEARCH.md`.
