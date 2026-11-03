@@ -1,6 +1,6 @@
 # External TCN challenger — 2 November 2026
 
-This completed fixed offline temporal-convolution experiment compares against corrected-combined with the deployed 40/40/8 decoder profile. It uses only seven external DFL/Sportec fixtures. It does not score or tune on challenge inputs, the public five-minute reference, or Metrica sample references. The joint blend is the leading new research candidate and has a final all-seven runnable refit. Completed results and limitations appear below.
+This completed fixed offline temporal-convolution experiment compares against corrected-combined with the deployed 40/40/8 decoder profile. It uses only seven external DFL/Sportec fixtures. It does not score or tune on challenge inputs, the public five-minute reference, or Metrica sample references. The joint blend leads this DFL experiment and has a final all-seven runnable refit. The subsequent frozen Metrica transfer check found a stoppage regression; see `TCN_TRANSFER.md` before treating it as an overall replacement. Completed original results and limitations appear below.
 
 ## Architecture and training
 

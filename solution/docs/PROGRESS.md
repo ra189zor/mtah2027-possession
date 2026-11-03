@@ -241,3 +241,13 @@ Details and reproduction: `STOPPAGE_RESEARCH.md`.
 Results, reproduction and runnable command: `TCN_RESEARCH.md`.
 
 Final runtime check: seven raw held-out TCN probability/blend replays are exact. Two independent final-candidate CLI executions produce byte-identical, official-format-valid external CSVs from an input-only folder, without reference access or scoring. The all-seven candidate is runnable locally; those external sample CSVs are not competition submissions.
+
+## Frozen Metrica transfer validation — complete, 3 November 2026
+
+- Compared current and joint-blend models on two Metrica samples absent from training, using 20 native/ball-gap/moderate/contextual cases. Derived conservative partial pass-team labels from documented event semantics; retained existing guarded stoppage references. Coverage is 36.18% / 42.60%, not full possession truth. No spellF1 or full-match accuracy claim is made.
+- Found a transfer regression: native partial accuracy changes 89.63% to 84.20% and 90.35% to 87.68%; dead recall falls 87.01% to 76.36% and 88.79% to 83.02%. Moderate synthetically missing pass-team accuracy improves 79.88% to 83.93% and 79.93% to 83.11%. The full joint blend is therefore not a consistent replacement across providers.
+- A separate post-result diagnostic reuses the original ownership-only ablation and a dead-only control. Ownership-only restores most native stoppage performance (87.07% / 89.10% D recall) and retains smaller gap benefits. This is exploratory on already inspected samples, not a new independent selection result.
+- All 136 tests pass. Primary audit: 88 hash checks, 480 subset score recalculations, paired-draw reproduction and two exact fresh moderate pipeline replays. Diagnostic audit: 40 prediction hashes and 120 score recalculations. No active unknowns, model changes, dependency installs, challenge access, commits/pushes or submission actions.
+- Next priority: freeze the ownership-only alternative and validate it on another external fixture before final selection; continue seeking complete independent possession labels. Real automatic tags and video recovery remain unimplemented improvement paths.
+
+Methods, results and reproduction: `TCN_TRANSFER.md`.

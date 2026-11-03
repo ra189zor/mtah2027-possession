@@ -68,6 +68,8 @@ The 2 November stoppage diagnosis, learned stop/restart experiment and two addit
 
 The TCN experiment completed on 3 November with a stronger fixed joint blend on all seven provider-label fixtures in every noise condition. The final candidate runs through `solution/tcn_predict.py` in the optional PyTorch environment and writes one CSV. See `docs/TCN_RESEARCH.md` for commands, held-out scores, alternate-label count limitations and verification. The earlier submission archives remain historical candidates.
 
+The subsequent frozen Metrica transfer check found better ownership through simulated ball gaps but worse native stoppage recall for the full joint blend. See `docs/TCN_TRANSFER.md` for the partial-reference results and the exploratory ownership-only alternative. The TCN blend is not established as a universal replacement; current bundles and submission files are preserved.
+
 Do not commit restricted data, frame-level predictions, independent validation labels, video clips or reconstructive exports. Signed registration terms govern data use. Hosted LLMs must not receive restricted match materials or extracts. Public model dependencies need licence and provenance review.
 
 The official source snapshot retains its own MIT licence. We have not copied its implementation into this repository. If code is copied later, preserve its attribution and licence.

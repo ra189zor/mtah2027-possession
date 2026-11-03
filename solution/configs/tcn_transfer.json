@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "games": [1, 2],
+  "conditions": ["native", "ball_gaps", "moderate", "contextual"],
+  "seeds": [17, 43, 101],
+  "guard_frames": 25,
+  "workers": 2,
+  "threads": 2,
+  "bootstrap_draws": 1000,
+  "bootstrap_seed": 20261103,
+  "primary_comparison": "Frozen final TCN joint blend versus frozen corrected-combined, with no fitting or selection.",
+  "reference_policy": "Partial H/A labels only inside documented same-team PASS events, excluding endpoints, offside/referee-hit events, absent/self endpoints, wrong periods, opposing possession actions inside the pass and H/A conflicts. Reuse the conservative existing out/goal-to-explicit-restart dead reference, with primary one-second guarded interiors. Never extend ownership into unannotated gaps or infer truth from tracking, visibility or predictions.",
+  "stress_policy": "Native means the supplied tracking, including its natural missingness. Ball-gaps uses only the previously fixed moderate ball dropout on otherwise native inputs. Moderate and contextual use the existing frozen DFL stress configuration and seeds, without labels. Observed visibility, originally missing frames, newly removed visible ball, ghosts and wrong-team bursts are reported separately.",
+  "endpoints": ["guarded labelled-frame H/A/D accuracy", "pass-team accuracy including predicted D as errors", "pass-team accuracy when visible ball was synthetically removed", "dead recall and precision on guarded event-derived stoppages"],
+  "uncertainty": "Paired resampling of event-derived labelled intervals within each game, sharing draws across corruption seeds and averaging seed metrics. These intervals are not complete possession spells or independently sampled matches. Report each game; only two games and sparse selected references prevent a broad generalization claim.",
+  "limits": "These sample games were not fitted by either model. Their binary results were examined for the old model before the TCN work; they are not untouched research holdouts. No complete possession reference, full-match accuracy, spellF1, model retuning, public challenge scoring or automatic submission selection."
+}
