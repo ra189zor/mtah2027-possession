@@ -66,6 +66,8 @@ External validation tooling, the frozen match split and test scenarios are docum
 
 The 2 November stoppage diagnosis, learned stop/restart experiment and two additional public Metrica sample checks are documented in `docs/STOPPAGE_RESEARCH.md`. These research checks preserve the existing deployment bundles; the two added samples supply partial binary references, not complete possession ground truth.
 
+The TCN experiment completed on 3 November with a stronger fixed joint blend on all seven provider-label fixtures in every noise condition. The final candidate runs through `solution/tcn_predict.py` in the optional PyTorch environment and writes one CSV. See `docs/TCN_RESEARCH.md` for commands, held-out scores, alternate-label count limitations and verification. The earlier submission archives remain historical candidates.
+
 Do not commit restricted data, frame-level predictions, independent validation labels, video clips or reconstructive exports. Signed registration terms govern data use. Hosted LLMs must not receive restricted match materials or extracts. Public model dependencies need licence and provenance review.
 
 The official source snapshot retains its own MIT licence. We have not copied its implementation into this repository. If code is copied later, preserve its attribution and licence.

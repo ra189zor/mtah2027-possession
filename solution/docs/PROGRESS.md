@@ -228,3 +228,16 @@ The later Step 3 completion entry above supersedes this plan update's historical
 - No challenge inputs/references were read, packages installed, commits/pushes made or submission uploaded in this checkpoint. TCN, real automatic-tag fusion and targeted video recovery remain pending.
 
 Details and reproduction: `STOPPAGE_RESEARCH.md`.
+
+## TCN challenger and runnable joint blend — complete, 3 November 2026
+
+- Built an 85,494-parameter offline TCN with missingness indicators, training-only normalization, two state heads and auxiliary boundary supervision. Seven fixed six-match fits exclude their test match; contextual corruption and absorbed labels remain evaluation-only.
+- Completed 560 score rows. The prespecified 50/50 joint blend improves provider spellF1 on all seven matches under every condition. Moderate spellF1 rises 0.51582 to 0.56117, frame accuracy 88.77% to 89.70%, missing-alive accuracy 74.57% to 77.83%, and count passes 4/7 to 6/7. The moderate paired-match gain interval is [+0.03402, +0.05640].
+- Alternate-label average interval scores also improve, but longer-label count agreement worsens. This remains adaptive research on seven fixtures and one training seed, not hidden-match accuracy or proof of a universal winner. The standalone TCN does not clearly replace the old emissions.
+- Audit passes 502 hash checks, seven scaler recomputations, seven probability replays and 28 decoder replays, with zero active unknowns. The optional-environment suite passes 130 tests. Raw runtime verification reproduces held-out probabilities and blend predictions directly from tracking.
+- Refit the primary blend on all seven external fixtures and added `solution/tcn_predict.py`, which writes one CSV using hash-bound base/specialist/TCN bundles. The all-seven refit is not scored on its training labels. No challenge inference/reference evaluation, commit, push or submission was performed.
+- Installed the isolated optional CPU PyTorch environment and the approved Microsoft Visual C++ runtime update. Original environment and existing bundles remain valid. The first experimental runner's worker-reuse issue is fixed and tested; the full frozen experiment was retrained under version 2.
+
+Results, reproduction and runnable command: `TCN_RESEARCH.md`.
+
+Final runtime check: seven raw held-out TCN probability/blend replays are exact. Two independent final-candidate CLI executions produce byte-identical, official-format-valid external CSVs from an input-only folder, without reference access or scoring. The all-seven candidate is runnable locally; those external sample CSVs are not competition submissions.

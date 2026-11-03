@@ -16,6 +16,10 @@ The 2 November external transfer experiment additionally uses [Metrica Sports pu
 
 Exact versions are in `solution/requirements-lock.txt`. `DEPENDENCIES.json` records installed distribution metadata and licence identifiers/hints for the pinned packages. Dependency wheels/binaries are not redistributed in this runtime archive; installation obtains them separately, with their own licences. The metadata inventory is provenance, not a blanket licence grant for the project or a substitute for individual package notices.
 
+## Optional TCN research dependencies
+
+The optional TCN experiment additionally uses CPU PyTorch and its dependencies in a separate research environment. `solution/requirements-tcn-lock.txt` pins its versions; `solution/docs/TCN_DEPENDENCIES.json` records the additional distributions' installed licence metadata and source URLs. Wheels come from the official PyTorch CPU index, with per-install reports retained locally. These research dependencies and checkpoints are not included in the existing runtime archive. See `TCN_RESEARCH.md` for experiment provenance and reproduction.
+
 ## Archive boundaries
 
 The public runtime archive contains code, documentation and the externally trained model payload only. It excludes the licensed match assets, reference labels, videos, tracking exports, independent research caches, registration terms, credentials and all possession CSV candidates. Candidate CSVs and their matching technical reports are kept in separate local private folders for the registered submission process.

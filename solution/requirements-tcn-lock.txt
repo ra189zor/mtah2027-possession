@@ -1,0 +1,13 @@
+# Optional research environment only; leave the production environment unchanged.
+# Install the CPU wheel from https://download.pytorch.org/whl/cpu separately.
+-r requirements-lock.txt
+torch==2.8.0+cpu
+filelock==4.2.4
+fsspec==2026.9.0
+Jinja2==3.1.6
+MarkupSafe==3.0.3
+mpmath==1.3.0
+networkx==3.6.1
+sympy==1.14.0
+typing_extensions==4.16.0
+setuptools==78.1.0
