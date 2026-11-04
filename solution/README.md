@@ -72,6 +72,8 @@ The subsequent frozen Metrica transfer check found better ownership through simu
 
 The 4 November fresh Game 3 check supports the frozen ownership-only alternative: moderate accuracy on synthetically missing pass frames improves 84.13% to 87.00%, with similar native stoppage recall. Ghost-exposed frames remain a weakness. See `docs/OWNER_TRANSFER_GAME3.md` for the partial-reference results, uncertainty, reproduction and audit. This validation does not change the runnable defaults or final submission choice.
 
+The ownership-only candidate is now runnable through `solution/owner_predict.py`, using the existing optional CPU PyTorch environment and `models/tcn-owner-v1/manifest.json`. It writes one CSV and a provenance sidecar. See [ownership-only run instructions](docs/OWNER_INFERENCE.md). The local portable archive is `outputs/owner_candidate/AOM_owner_runtime_v1.zip`; it includes verified runtime code and weights, with no match data. The extracted archive reproduces three external cases exactly, passes byte-identical repeat and missing/invalid-input checks, and runs without original research/reference access. All 143 tests pass. Original entry points, model weights and submission files remain unchanged; this packaging step does not provide a new accuracy score.
+
 Do not commit restricted data, frame-level predictions, independent validation labels, video clips or reconstructive exports. Signed registration terms govern data use. Hosted LLMs must not receive restricted match materials or extracts. Public model dependencies need licence and provenance review.
 
 The official source snapshot retains its own MIT licence. We have not copied its implementation into this repository. If code is copied later, preserve its attribution and licence.
