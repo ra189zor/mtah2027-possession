@@ -74,6 +74,8 @@ The 4 November fresh Game 3 check supports the frozen ownership-only alternative
 
 The ownership-only candidate is now runnable through `solution/owner_predict.py`, using the existing optional CPU PyTorch environment and `models/tcn-owner-v1/manifest.json`. It writes one CSV and a provenance sidecar. See [ownership-only run instructions](docs/OWNER_INFERENCE.md). The local portable archive is `outputs/owner_candidate/AOM_owner_runtime_v1.zip`; it includes verified runtime code and weights, with no match data. The extracted archive reproduces three external cases exactly, passes byte-identical repeat and missing/invalid-input checks, and runs without original research/reference access. All 143 tests pass. Original entry points, model weights and submission files remain unchanged; this packaging step does not provide a new accuracy score.
 
+The subsequent full-input check generated a private ownership-only `AOM.csv` and matching `AOM.md` report under `outputs/submission/AOM_owner_20261104/private_candidate/`. Independent runs are byte-identical and pass official format/period checks without reference scoring. See [the draft handoff](docs/OWNER_DRAFT.md). This remains a local candidate; final selection, public code/model availability and submission are pending.
+
 Do not commit restricted data, frame-level predictions, independent validation labels, video clips or reconstructive exports. Signed registration terms govern data use. Hosted LLMs must not receive restricted match materials or extracts. Public model dependencies need licence and provenance review.
 
 The official source snapshot retains its own MIT licence. We have not copied its implementation into this repository. If code is copied later, preserve its attribution and licence.

@@ -271,3 +271,13 @@ Methods, results and reproduction: `OWNER_TRANSFER_GAME3.md`. Next delivery can 
 - All 143 tests pass, including new component/configuration identity checks and proof that the TCN dead head cannot change retained dead/event emissions. No new accuracy scoring, dependency installs, challenge-input execution, commits/pushes, publication or submission occurred. Existing AOM candidates remain intact.
 
 Usage and reproduction: `OWNER_INFERENCE.md`. This completes packaging the better-supported research candidate; final submission choice and any new challenge-input run remain separate steps.
+
+## Ownership-only full-input draft — complete, 4 November 2026
+
+- Executed the frozen packaged candidate twice on the provided tactical tracking/metadata through the `--challenge` loader. The isolated workers use an explicit two-asset allowlist and block reference, benchmark and original research access. Guard self-tests pass.
+- Both CSVs are byte-identical, pass the official standalone format checker and satisfy published-period coverage. The copied final private CSV is rechecked. Raw inputs, original models, extracted runtime files and archive hashes remain unchanged. No reference scoring or competition descriptive/resource numbers are reported.
+- Prepared `outputs/submission/AOM_owner_20261104/private_candidate/AOM.csv`, matching `AOM.md`, provenance sidecar, candidate manifest and handoff. The updated report discloses all labelled external data, source/provider, derivation and amount; it distinguishes earlier public correctness checks from external fitting and selection. Current online instructions/rules were reviewed; old source snapshots remain intact.
+- All 143 tests pass. An independent artifact check verifies report substitutions, CSV/report/sidecar/protocol identities, both worker guards, model preservation and ignored private files. No fitted parameters, decoder decisions or output labels are manually changed.
+- This completes the local ownership-only draft. Final candidate choice, making matching code/weights publicly available and registered submission remain separate user actions. No commit, push, release, upload or submission occurred.
+
+Details and reproduction: `OWNER_DRAFT.md`.
