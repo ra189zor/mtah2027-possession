@@ -251,3 +251,13 @@ Final runtime check: seven raw held-out TCN probability/blend replays are exact.
 - Next priority: freeze the ownership-only alternative and validate it on another external fixture before final selection; continue seeking complete independent possession labels. Real automatic tags and video recovery remain unimplemented improvement paths.
 
 Methods, results and reproduction: `TCN_TRANSFER.md`.
+
+## Fresh ownership-only validation — complete, 4 November 2026
+
+- Froze the 50/50 ownership-only blend, original dead emissions/events and 40/40/8 decoder before downloading Metrica Sample Game 3. Existing weights and runtime defaults remain unchanged. This fixture was absent from training and had no prior model scores in this project.
+- Downloaded pinned public EPTS/XML/JSON files and implemented a metadata-driven tracking adapter, including eleven substitution-related formats and exact 25 Hz event alignment. Conservative guarded pass/stoppage references cover 46.99% of 143,761 frames; CARRY supplies exclusions only. No full possession truth or spellF1 is inferred.
+- Completed ten fixed native/ball-gap/moderate/contextual cases. The primary moderate newly missing pass accuracy improves 84.13% to 87.00%, paired conditional 95% gain interval [+1.40, +4.27] percentage points. Moderate overall partial accuracy improves 87.96% to 88.86%. Native dead recall is 81.66% to 81.97%; native overall gain has an interval crossing zero.
+- Ghost-exposed partial accuracy falls 82.49% to 81.93%. Ownership-only is supported as the next packaging candidate, not a universal winner or final submission selection. Complete independent possession truth and false-ball robustness remain unresolved.
+- All 140 tests pass. Audit verifies 48 hashes, 240 subset metrics, 30 paired draw sets, 33 independent raw mapping rows, all corruption masks and two exact native/moderate runtime replays. Zero active unknowns. No new dependencies, fitting, tuning, competition-data access, commits, pushes or submission changes.
+
+Methods, results and reproduction: `OWNER_TRANSFER_GAME3.md`. Next delivery can package the frozen ownership-only pipeline separately while preserving existing candidates and their source hashes.

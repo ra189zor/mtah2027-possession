@@ -90,6 +90,8 @@ The existing seven-DFL evaluation already measured ownership-only moderate spell
 
 Decision: retain all existing bundles; qualify the full joint blend as DFL-leading but transfer-limited. Prioritize freezing and testing ownership-only fusion on another external fixture before choosing the final submission. No deployed fusion, model file, submission CSV or threshold changed in this checkpoint. Real automatic-tag fusion, video recovery and complete independent possession references remain later work.
 
+Follow-up completed 4 November: the ownership-only choice was frozen before downloading previously unscored Metrica Game 3. Its primary moderate missing-pass accuracy improves 84.13% to 87.00%, with a positive paired conditional interval; native dead recall remains similar. Ghost-exposed partial accuracy slightly regresses. See `OWNER_TRANSFER_GAME3.md` for this distinct fresh-fixture protocol and its limitations. The original two-game results and diagnostic remain unchanged.
+
 ## Verification
 
 All 136 tests pass. The primary transfer audit passes 88 hash checks, recalculates 480 subset score dictionaries and all stored paired draws, and reproduces two fresh full-pipeline moderate predictions exactly. Both native old-model replays match the previous check; every active prediction remains H/A/D. All model manifests and fitted files retain their recorded identities. The exploratory diagnostic passes 40 prediction hash checks and 120 score recalculations. These audits establish consistency, not hidden-match accuracy.

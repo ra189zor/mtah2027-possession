@@ -70,6 +70,8 @@ The TCN experiment completed on 3 November with a stronger fixed joint blend on 
 
 The subsequent frozen Metrica transfer check found better ownership through simulated ball gaps but worse native stoppage recall for the full joint blend. See `docs/TCN_TRANSFER.md` for the partial-reference results and the exploratory ownership-only alternative. The TCN blend is not established as a universal replacement; current bundles and submission files are preserved.
 
+The 4 November fresh Game 3 check supports the frozen ownership-only alternative: moderate accuracy on synthetically missing pass frames improves 84.13% to 87.00%, with similar native stoppage recall. Ghost-exposed frames remain a weakness. See `docs/OWNER_TRANSFER_GAME3.md` for the partial-reference results, uncertainty, reproduction and audit. This validation does not change the runnable defaults or final submission choice.
+
 Do not commit restricted data, frame-level predictions, independent validation labels, video clips or reconstructive exports. Signed registration terms govern data use. Hosted LLMs must not receive restricted match materials or extracts. Public model dependencies need licence and provenance review.
 
 The official source snapshot retains its own MIT licence. We have not copied its implementation into this repository. If code is copied later, preserve its attribution and licence.

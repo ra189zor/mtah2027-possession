@@ -12,6 +12,8 @@ Our changes include coordinate conversion, anonymous team slots, derived H/A/D/X
 
 The 2 November external transfer experiment additionally uses [Metrica Sports public sample tracking/events](https://github.com/metrica-sports/sample-data) at revision `e706dd506b360d69d9d123d5b8026e7294b13996`. Credit Metrica Sports. Its README asks public users to acknowledge the source; this project does not assign an additional data licence. The two anonymized sample games and event-derived partial binary references remain local, ignored and excluded from deployment archives. They are not training data for the existing fitted models. See `solution/docs/EXTERNAL_DATA_SOURCES.md`.
 
+The 4 November ownership-only transfer check adds Metrica Sample Game 3 at the same pinned revision. Its EPTS/XML/JSON assets and derived partial references remain local and excluded from runtime archives. Credit Metrica Sports. No Metrica match is used to fit these models; the Game 3 adapter changes format and uses CARRY only to exclude uncertain reference spans. See `OWNER_TRANSFER_GAME3.md` for transformations and limitations.
+
 ## Python dependencies
 
 Exact versions are in `solution/requirements-lock.txt`. `DEPENDENCIES.json` records installed distribution metadata and licence identifiers/hints for the pinned packages. Dependency wheels/binaries are not redistributed in this runtime archive; installation obtains them separately, with their own licences. The metadata inventory is provenance, not a blanket licence grant for the project or a substitute for individual package notices.
