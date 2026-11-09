@@ -4,6 +4,12 @@ Football possession segmentation from noisy tracking data and tactical events fo
 
 ## Current status
 
+**Final candidate selected on 9 November 2026: ownership-only (`solution/owner_predict.py`).** The frozen code-and-weights package is `AOM_owner_runtime_v1.zip`. See [final selection and reproduction](solution/docs/FINAL_CANDIDATE.md). This supersedes pending-selection statements in the historical checkpoints below. Earlier variants remain preserved; no competition submission has been made.
+
+Download the matching code and model weights from the [AOM v1 public release](https://github.com/ra189zor/mtah2027-possession/releases/tag/aom-owner-v1). Use the attached runtime ZIP, not GitHub's automatic source archives. Anonymous download and exact checksum were verified; see [publication record](solution/docs/PUBLICATION.md).
+
+## Earlier research checkpoints
+
 Latest research implements tracking reliability, missing-ball ownership and boundary specialists, evaluated across seven external matches, three noisy seeds and four label conventions. The corrected combined candidate raises provider spellF1 from event4's 0.6205 to 0.6312 clean and 0.5046 to 0.5159 under moderate noise. All seven moderate fixtures improve; count coverage remains 4/7. The original baseline still leads under some longer-possession conventions. All 108 tests pass in both environments; independent source/exclusion and exact inference replays pass.
 
 The new candidate is runnable through `solution/research_predict.py` with separate corrected research weights. See `solution/docs/RESEARCH_INFERENCE.md` for commands and `solution/docs/RELIABILITY_RESULTS.md` for full results and limitations. This is repeated external research, not an independent new-dataset or competition score. The original AOM archive remains preserved; no submission variant has been selected automatically.

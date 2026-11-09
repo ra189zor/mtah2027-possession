@@ -1,5 +1,9 @@
 # More Than A Hack 2027 solution workspace
 
+**Final AOM candidate: ownership-only, selected 9 November 2026.** Use `owner_predict.py` and the frozen `AOM_owner_runtime_v1.zip` code-and-weights archive. See [selection and reproduction](docs/FINAL_CANDIDATE.md). This supersedes deferred-selection statements in earlier checkpoints below; previous variants remain preserved.
+
+Code and fitted weights are attached to the [AOM v1 public release](https://github.com/ra189zor/mtah2027-possession/releases/tag/aom-owner-v1). See [publication verification](docs/PUBLICATION.md).
+
 Latest research: the corrected reliability/gap/boundary candidate is implemented and runnable. Seven-match moderate provider spellF1 rises from 0.5046 to 0.5159, with improvement on all seven fixtures. All 108 tests pass in both environments; the corrected research runtime reproduces held-out outputs exactly. See `docs/RELIABILITY_RESULTS.md` and `docs/RESEARCH_INFERENCE.md`. The following delivery notes describe the preserved original AOM package; the new research candidate is a separate explicit choice.
 
 Status: Algorithm development, end-to-end inference, final verification and draft submission packaging are complete. Stronger event rewards improve recorded moderate provider spellF1 from 0.4916 to 0.5046 and count passes from 2/7 to 4/7, with zero playing-period X. Alternate-label regressions remain, so variant choice is explicit. All 103 tests pass; the earlier 98 runtime/research tests also passed in the fresh environment. The public runtime archive reproduces all three private candidates exactly. The registered team name is AOM; primary variant selection remains deferred. See `docs/DELIVERY.md`; nothing has been published or submitted.

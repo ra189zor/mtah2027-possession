@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "team_name": "AOM",
+  "selection_date": "2026-11-09",
+  "selection_status": "final",
+  "candidate": "tcn_owner_blend",
+  "entry_point": "solution/owner_predict.py",
+  "bundle": "models/tcn-owner-v1",
+  "runtime_archive": "AOM_owner_runtime_v1.zip",
+  "runtime_archive_sha256": "4373a111611d78e2734bae80897ba650e5109f0cba29facfccafd52e5cf6d6ee",
+  "owner_manifest_sha256": "16c698cd96f134ea73a568cc49a3478081f55890d0d1009b5e73b80ee6d2a22c",
+  "model_set_sha256": "8167d736571462e8d4d4b552ea91c00648f1f14a98e9e7126ff106e2e9e63398",
+  "decision_document": "solution/docs/FINAL_CANDIDATE.md",
+  "release_url": "https://github.com/ra189zor/mtah2027-possession/releases/tag/aom-owner-v1",
+  "publication_status": "published",
+  "anonymous_runtime_download_verified": true,
+  "historical_candidates_preserved": true,
+  "competition_submitted": false
+}
