@@ -1,24 +1,56 @@
-"""Check the public runtime archive's file inventory and SHA-256 values (standard library only)."""
+"""Verify/download the frozen AOM runtime; optionally extract to a new directory."""
+import argparse
 import hashlib
 import json
-from pathlib import Path
+from pathlib import Path, PurePosixPath
+import urllib.request
+import zipfile
+
+NAME = 'AOM_owner_runtime_v1.zip'
+SHA256 = '4373a111611d78e2734bae80897ba650e5109f0cba29facfccafd52e5cf6d6ee'
+URL = 'https://github.com/ra189zor/mtah2027-possession/releases/download/aom-owner-v1/' + NAME
 
 
-def verify(root):
-    manifest=json.loads((root/'PUBLIC_MANIFEST.json').read_text(encoding='utf-8'))
-    expected=set(manifest['files'])|{'PUBLIC_MANIFEST.json','SHA256SUMS.txt'}
-    for name,record in manifest['files'].items():
-        path=(root/name).resolve()
-        if Path(name).is_absolute() or not path.is_relative_to(root.resolve()):raise ValueError('Unsafe release path')
-        if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest()!=record['sha256'] or path.stat().st_size!=record['bytes']:
-            raise ValueError('Release file identity mismatch: '+name)
-    sums={}
-    for line in (root/'SHA256SUMS.txt').read_text(encoding='utf-8').splitlines():
-        checksum,name=line.split('  ',1);sums[name]=checksum
-    if set(sums)!=expected-{'SHA256SUMS.txt'}:raise ValueError('Checksum inventory mismatch')
-    for name,checksum in sums.items():
-        if hashlib.sha256((root/name).read_bytes()).hexdigest()!=checksum:raise ValueError('Checksum mismatch: '+name)
-    print('PASS: public runtime payload and manifest checksums verified')
+def verify(path):
+    if hashlib.sha256(path.read_bytes()).hexdigest() != SHA256:
+        raise ValueError('Runtime ZIP checksum differs from selected release')
+    with zipfile.ZipFile(path) as z:
+        names = z.namelist()
+        manifest = json.loads(z.read('OWNER_RUNTIME_MANIFEST.json'))
+        if len(names) != len(set(names)) or set(names) != set(manifest['files']) | {'OWNER_RUNTIME_MANIFEST.json'}:
+            raise ValueError('Archive inventory differs')
+        for name, digest in manifest['files'].items():
+            p = PurePosixPath(name)
+            if p.is_absolute() or '..' in p.parts or '\\' in name or ':' in name:
+                raise ValueError('Unsafe archive path')
+            if hashlib.sha256(z.read(name)).hexdigest() != digest:
+                raise ValueError('Archived file checksum differs: ' + name)
+    return manifest
 
 
-if __name__=='__main__':verify(Path(__file__).resolve().parents[1])
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--archive', type=Path, default=Path('outputs/releases') / NAME)
+    parser.add_argument('--download', action='store_true')
+    parser.add_argument('--extract', type=Path)
+    args = parser.parse_args()
+    if args.extract and args.extract.exists():
+        parser.error('Extraction destination exists; choose a new directory')
+    if args.download and not args.archive.exists():
+        args.archive.parent.mkdir(parents=True, exist_ok=True)
+        with urllib.request.urlopen(URL, timeout=60) as response:
+            payload = response.read()
+        if hashlib.sha256(payload).hexdigest() != SHA256:
+            raise ValueError('Downloaded checksum differs; nothing saved')
+        with args.archive.open('xb') as out:
+            out.write(payload)
+    verify(args.archive)
+    if args.extract:
+        args.extract.mkdir(parents=True)
+        with zipfile.ZipFile(args.archive) as z:
+            z.extractall(args.extract)
+    print('PASS: selected runtime ZIP and every archived file verified')
+
+
+if __name__ == '__main__':
+    main()

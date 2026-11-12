@@ -8,19 +8,19 @@ The runtime uses the supplied `games.py`, `evaluation/possession_metrics.py` and
 
 Credit Deutsche Fußball Liga (DFL), Sportec Solutions and Bassek et al. (2025), *An integrated dataset of spatiotemporal and event data in elite soccer*, Scientific Data 12, 195, [DOI 10.1038/s41597-025-04505-y](https://doi.org/10.1038/s41597-025-04505-y). The dataset is published under CC BY 4.0. We used the PySport mirror at revision `a715a38dfbaf5f58e431727c2b78d174101a703c`.
 
-Our changes include coordinate conversion, anonymous team slots, derived H/A/D/X references from provider codes, separate model-facing input arrays, seeded input-only corruption, feature extraction and fitted models. Raw downloads, label arrays and frame-level external predictions are not included in the public runtime archive. Full transformation notes remain in `DATA_PROVENANCE.md` / `solution/docs/EXTERNAL_DATA_SOURCES.md`.
+Our changes include coordinate conversion, anonymous team slots, derived H/A/D/X references from provider codes, separate model-facing input arrays, seeded input-only corruption, feature extraction and fitted models. Raw downloads, label arrays and frame-level external predictions are not included in the public runtime archive. Full transformation notes remain in `EXTERNAL_DATA_SOURCES.md`.
 
 The 2 November external transfer experiment additionally uses [Metrica Sports public sample tracking/events](https://github.com/metrica-sports/sample-data) at revision `e706dd506b360d69d9d123d5b8026e7294b13996`. Credit Metrica Sports. Its README asks public users to acknowledge the source; this project does not assign an additional data licence. The two anonymized sample games and event-derived partial binary references remain local, ignored and excluded from deployment archives. They are not training data for the existing fitted models. See `solution/docs/EXTERNAL_DATA_SOURCES.md`.
 
-The 4 November ownership-only transfer check adds Metrica Sample Game 3 at the same pinned revision. Its EPTS/XML/JSON assets and derived partial references remain local and excluded from runtime archives. Credit Metrica Sports. No Metrica match is used to fit these models; the Game 3 adapter changes format and uses CARRY only to exclude uncertain reference spans. See `OWNER_TRANSFER_GAME3.md` for transformations and limitations.
+The 4 November ownership-only transfer check adds Metrica Sample Game 3 at the same pinned revision. Its EPTS/XML/JSON assets and derived partial references remain local and excluded from runtime archives. Credit Metrica Sports. No Metrica match is used to fit these models; the Game 3 adapter changes format and uses CARRY only to exclude uncertain reference spans. See `VALIDATION.md` for transformations and limitations.
 
 ## Python dependencies
 
 Exact versions are in `solution/requirements-lock.txt`. `DEPENDENCIES.json` records installed distribution metadata and licence identifiers/hints for the pinned packages. Dependency wheels/binaries are not redistributed in this runtime archive; installation obtains them separately, with their own licences. The metadata inventory is provenance, not a blanket licence grant for the project or a substitute for individual package notices.
 
-## Optional TCN research dependencies
+## TCN dependencies
 
-The optional TCN experiment additionally uses CPU PyTorch and its dependencies in a separate research environment. `solution/requirements-tcn-lock.txt` pins its versions; `solution/docs/TCN_DEPENDENCIES.json` records the additional distributions' installed licence metadata and source URLs. Wheels come from the official PyTorch CPU index, with per-install reports retained locally. These research dependencies and checkpoints are not included in the existing runtime archive. See `TCN_RESEARCH.md` for experiment provenance and reproduction.
+The final runtime requires CPU PyTorch and the packages pinned in `solution/requirements-tcn-lock.txt`. `TCN_DEPENDENCIES.json` records their distribution metadata. The release includes fitted weights, not dependency wheels; installation obtains packages under their respective licences.
 
 ## Archive boundaries
 

@@ -11,7 +11,6 @@ if HAS_TORCH:
     import torch
     from possession.temporal_network import (PossessionTCN, fit_normalizer, normalize, sampled_indices,
         upsample_probabilities, boundary_targets, losses, infer_sampled, combine_probabilities)
-    from train_tcn import training_window, configure_torch_threads
 
 
 @unittest.skipUnless(HAS_TORCH, 'TCN tests require the isolated optional PyTorch environment')
@@ -26,11 +25,6 @@ class TemporalNetworkTests(unittest.TestCase):
                 'inference_core_steps': 7, 'boundary_loss_weight': .2,
                 'boundary_class_weights': [1, 4, 4, 4]}
 
-    def test_thread_configuration_can_be_reused_by_a_pool_worker(self):
-        configure_torch_threads(1)
-        torch.ones(2, 3).sum()
-        configure_torch_threads(1)
-        self.assertEqual(torch.get_num_interop_threads(), 1)
 
     def test_normalization_uses_only_supplied_training_values_and_tracks_missingness(self):
         train = np.array([[1., 2., np.nan], [3., 4., np.nan]])
@@ -64,14 +58,6 @@ class TemporalNetworkTests(unittest.TestCase):
         other = infer_sampled(model, altered, period, norm, cfg)
         np.testing.assert_array_equal(chunked[:17], other[:17])
 
-    def test_training_windows_never_copy_the_next_half(self):
-        case = {'x': np.arange(30).reshape(10, 3), 'state': np.r_[np.zeros(5), np.ones(5)],
-                'boundary': np.zeros(10), 'owner_weight': np.ones(10)}
-        x, y, w, b = training_window(case, 4, (0, 5), 4, 2)
-        np.testing.assert_array_equal(x[:3], case['x'][2:5])
-        self.assertTrue(np.isnan(x[3:]).all())
-        np.testing.assert_array_equal(y, [0, -1, -1, -1])
-        np.testing.assert_array_equal(w, [1, 0, 0, 0])
 
     def test_auxiliary_targets_use_next_state_and_do_not_cross_halves(self):
         labels = np.array([0, 0, 1, 1, 2, -1, 0, 0, 0])

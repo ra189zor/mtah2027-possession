@@ -42,14 +42,13 @@ reports/
 *_possession_gt_reference.csv
 possession_by_frame.pkl
 more-than-a-hack-2027-main repo/evaluation/results/*.csv
-!more-than-a-hack-2027-main repo/evaluation/results/baseline_*.csv
 more-than-a-hack-2027-main repo/evaluation/scoreboard.csv
 /research/*_evaluation/
 /research/step2_data_check.json
 /research/dataset_audit_console.txt
 /research/local_data_manifest.json
 
-# Local model artifacts pending licence/provenance review.
+# Model weights are distributed through the public release, not Git.
 models/
 checkpoints/
 *.pt
@@ -66,3 +65,8 @@ checkpoints/
 .vscode/
 *.log
 .DS_Store
+
+# Optional upstream reference material is not part of delivery.
+/more-than-a-hack-2027-main repo/evaluation/gt/
+/research/dataset_audit.json
+/research/provenance.json

@@ -1,81 +1,47 @@
-# mtah2027-possession
+# AOM — football possession from tracking
 
-Football possession segmentation from noisy tracking data and tactical events for More Than A Hack 2027.
+One final offline pipeline: ownership-only temporal fusion. It uses recorded tracking and future context, not live video.
 
-## Current status
+## Reproduce
 
-**Final candidate selected on 9 November 2026: ownership-only (`solution/owner_predict.py`).** The frozen code-and-weights package is `AOM_owner_runtime_v1.zip`. See [final selection and reproduction](solution/docs/FINAL_CANDIDATE.md). This supersedes pending-selection statements in the historical checkpoints below. Earlier variants remain preserved; no competition submission has been made.
-
-Download the matching code and model weights from the [AOM v1 public release](https://github.com/ra189zor/mtah2027-possession/releases/tag/aom-owner-v1). Use the attached runtime ZIP, not GitHub's automatic source archives. Anonymous download and exact checksum were verified; see [publication record](solution/docs/PUBLICATION.md).
-
-## Earlier research checkpoints
-
-Latest research implements tracking reliability, missing-ball ownership and boundary specialists, evaluated across seven external matches, three noisy seeds and four label conventions. The corrected combined candidate raises provider spellF1 from event4's 0.6205 to 0.6312 clean and 0.5046 to 0.5159 under moderate noise. All seven moderate fixtures improve; count coverage remains 4/7. The original baseline still leads under some longer-possession conventions. All 108 tests pass in both environments; independent source/exclusion and exact inference replays pass.
-
-The new candidate is runnable through `solution/research_predict.py` with separate corrected research weights. See `solution/docs/RESEARCH_INFERENCE.md` for commands and `solution/docs/RELIABILITY_RESULTS.md` for full results and limitations. This is repeated external research, not an independent new-dataset or competition score. The original AOM archive remains preserved; no submission variant has been selected automatically.
-
-## Original verified package (preserved)
-
-Steps 1–6, learned evidence, gap-aware ownership, temporal decoding, seven-match external validation and learned switch-event experiments are complete. The stronger fixed event reward improves mean moderate provider-label spellF1 from 0.4916 to 0.5046 and count passes from 2/7 to 4/7. Contextual-noise spellF1 improves from 0.4718 to 0.4837. All predictions have zero playing-period X; all 90 tests and the cross-fitting/repetition audit pass.
-
-The event variants regress under absorbed-short-spell references, so they and the original remain explicit choices rather than a universal default. False switches and three moderate count failures remain. Methods and label-convention results are in `solution/docs/SWITCH_EVENTS.md`.
-
-End-to-end inference is runnable with a final all-seven external model bundle and an explicit variant. Final verification passes all 98 tests, fresh-environment external reproduction, failure handling and unscored local challenge-input format/repeatability checks. From the project root:
+Use Python 3.11. Download and verify the frozen code-and-weights release:
 
 ```powershell
-& '.\.venv\Scripts\python.exe' solution/predict.py --bundle models/possession-v1 --input data/external/sportec/J03WN1/prepared/inputs.npz --variant event4 --output outputs/my_prediction.csv
-```
-
-Use `baseline`, `event2` or `event4`; see `solution/docs/INFERENCE.md` for inputs and model provenance, and `solution/docs/FINAL_VERIFICATION.md` for acceptance checks/limits. The local model bundle is ignored by Git and must be supplied separately or rebuilt on another machine. The draft submission package is complete: public runtime/model ZIP and three separate private CSV/report candidates, with exact isolated reproduction verified. All 103 tests pass. The registered team name is AOM; primary variant selection remains deferred. See `solution/docs/DELIVERY.md` for the handoff. No competition quality score, automatic variant choice, publication or submission is claimed.
-
-## Project layout
-
-- `solution/`: our implementation, dependencies, data preparation tools and progress notes.
-- `more-than-a-hack-2027-main repo/`: provided challenge source and official evaluation code. Its original nested ignore file was consolidated into the root policy; other supplied source files remain unchanged.
-- `research/`: research report and aggregate audit notes; generated reports/local manifests are ignored.
-- `.gitignore`: the single project ignore policy.
-
-Original downloads, prepared data, the virtual environment and the previous local Git checkpoint are ignored. The user handles repository initialization, commits and pushes.
-
-## Environment and data verification
-
-Run from the project root in PowerShell:
-
-```powershell
+python solution/verify_release.py --download --extract outputs/aom-runtime
+cd outputs/aom-runtime
 python -m venv .venv
-& '.\.venv\Scripts\python.exe' -m pip install -r solution/requirements-lock.txt
-& '.\.venv\Scripts\python.exe' solution/tools/prepare_data.py
-& '.\.venv\Scripts\python.exe' solution/tools/check_data.py
+& '.\.venv\Scripts\python.exe' -m pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+& '.\.venv\Scripts\python.exe' -m pip install -r solution/requirements-tcn-lock.txt
+$env:MTAH_DATA_DIR = 'D:\path\to\provided-data-root'
+& '.\.venv\Scripts\python.exe' solution/owner_predict.py --challenge --output outputs/AOM.csv
 ```
 
-The existing local `.venv` is already installed; recreation is only needed on a new machine. Restricted downloads must be obtained separately through registration and placed in the original dataset directory. They are not distributed in this repository.
+The data root must contain `tactical/BAR-ATH_tactical_atd.xml` and `tactical/BAR-ATH_tactical_atd.txt`. Obtain licensed inputs separately. Windows needs the Microsoft Visual C++ runtime. Existing prediction files are never overwritten.
 
-Preparation extracts seven non-video assets and creates two canonical video hard links. Inputs remain local. Treat hard-linked video files as read-only, since either filename refers to the same bytes.
-
-Tactical inputs pass all implemented checks. The broadcast decoder reports one fewer video frame than its tracking row count. Broadcast fusion is deferred; the qualifying output always uses the tactical timeline. Video checks decode selected key frames rather than scanning every frame sequentially.
-
-Detailed results: `solution/docs/DATA_VERIFICATION.md`. Current progress: `solution/docs/PROGRESS.md`.
-
-## Official baseline reproduction
+From the repository root, validate the result with the pinned interpreter:
 
 ```powershell
-& '.\.venv\Scripts\python.exe' -X utf8 solution/tools/reproduce_baselines.py
+& 'outputs/aom-runtime/.venv/Scripts/python.exe' 'more-than-a-hack-2027-main repo/evaluation/validate_submission.py' outputs/aom-runtime/outputs/AOM.csv
 ```
 
-This rebuilds all four baselines twice, validates them, checks labels and repeated-file hashes, then scores them on the official public correctness window. Output stays under ignored `outputs/baseline_reproduction/`. Summary and measurement limits: `solution/docs/BASELINE_REPRODUCTION.md`.
+The [public release](https://github.com/ra189zor/mtah2027-possession/releases/tag/aom-owner-v1) provides `AOM_owner_runtime_v1.zip`, checksum and selection record. Use the attached ZIP: GitHub's automatic source archives omit weights. The published ZIP remains unchanged; its historical documentation predates final selection. This checkout retains the same frozen runtime sources and consolidated current documentation.
 
-## External validation
+## Documentation
 
-The historical split and original noise scenarios remain in `solution/configs/validation.json`. The completed seven-match protocol in `solution/configs/nested_validation.json` explicitly replaces the old sealed role: all seven public Sportec/DFL fixtures are now opened outer-test fixtures. Inputs and reference labels remain separate. See `solution/docs/NESTED_VALIDATION.md` for current results and `solution/docs/EXTERNAL_DATA_SOURCES.md` for attribution. Historical experiments and their split guards remain unchanged.
+- [AOM technical report](AOM.md): architecture, training labels and amounts, conventions, evidence, limitations and reproduction.
+- [Input/output guide](solution/docs/INFERENCE.md).
+- [Validation summary](solution/docs/VALIDATION.md).
+- [Data sources](solution/docs/EXTERNAL_DATA_SOURCES.md) and [third-party notices](solution/docs/THIRD_PARTY_NOTICES.md).
+
+Only `solution/owner_predict.py` is the supported prediction entry point. Older-named modules and all three weight payloads are internal dependencies of this single pipeline. Removing or renaming them invalidates frozen source checks. `solution/configs/final_candidate.json` identifies the release; other retained configs support tests, while deployment settings come from manifests.
+
+## Verification and submission
 
 ```powershell
-& '.\.venv\Scripts\python.exe' -m unittest discover -s solution/tests -v
+python solution/verify_release.py --archive path/to/AOM_owner_runtime_v1.zip
+python -m unittest discover -s solution/tests -v
 ```
 
-## Feature extraction
+Run tests with the full pinned PyTorch environment. Training and historical benchmark tooling remain in Git history and the preserved local development snapshot; they are not needed for fitted-model inference. The public runtime contains no match data or possession CSVs.
 
-```powershell
-& '.\.venv\Scripts\python.exe' -X utf8 solution/tools/extract_features.py
-```
-
-This creates ignored feature caches from tracking and available automatic tags without opening reference-label arrays. Each channel has an explicit validity mask. Details, checks and limitations: `solution/docs/FEATURE_EXTRACTION.md`.
+Official deliverables: one `AOM.csv`, a public repository URL, and short `AOM.md` report. Selection and publication are complete; competition submission remains pending. Consult the current [submission instructions](https://github.com/metrica-sports/more-than-a-hack-2027/blob/main/SUBMISSION.md) and [rules](https://github.com/metrica-sports/more-than-a-hack-2027/blob/main/RULES.md). Reproducibility does not establish hidden-match accuracy.

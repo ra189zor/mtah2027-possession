@@ -6,3 +6,8 @@
 *.joblib binary
 *.npz binary
 *.npy binary
+
+# Keep ignore and text documentation stable after consolidating attributes.
+.gitignore text eol=lf
+.gitattributes text eol=lf
+*.txt text eol=lf
