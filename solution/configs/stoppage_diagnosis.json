@@ -1,9 +1,0 @@
-{
-  "version": 1,
-  "workers": 2,
-  "threads": 2,
-  "dead_threshold": 0.5,
-  "bootstrap_draws": 1000,
-  "seed": 907,
-  "policy": "External-only diagnostic, not a hyperparameter search. Reconstruct the frozen corrected combined candidate on all seven outer-held-out fixtures and all ten cached clean/noisy inputs. Verify every original prediction. Compare original nested costs with the existing deployment costs using the same held-out heads. Separate raw dead evidence, zero stop/restart costs, hard-mask diagnostic oracles and true-dead emissions. Oracles are evaluator-only interventions, never models or deployable predictions. All fixtures were previously examined; no claim of independent validation. No challenge inputs or labels are read."
-}
